@@ -9,185 +9,166 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <style>
+  /* Base namespace to beat Bootstrap and keep scope to this page only */
+  .checkout-page * { box-sizing: border-box; }
+
   /* General Styles */
-  body.checkout-page {
+  .checkout-page {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
   }
 
-  .header-title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'DM Serif Display', serif;
-    font-size: 50px;
-    color: #6c8df0;
-    font-weight: bold;
-  }
-
-  .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .logo {
-    width: 80px;
-  }
-
-  .brand-name {
-    font-family: 'Dancing Script', cursive;
-    font-size: 28px;
-    font-weight: bold;
-    color: purple;
-  }
-
-  .navbar {
+  .checkout-page .navbar {
     background: #f8d2ed;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
+    gap: 16px;
   }
 
-  .nav-links {
+  .checkout-page .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .checkout-page .logo { width: 80px; }
+
+  .checkout-page .brand-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    font-weight: bold;
+    color: purple;
+  }
+
+  .checkout-page .header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'DM Serif Display', serif; /* falls back if font not loaded */
+    font-size: 50px;
+    color: #6c8df0;
+    font-weight: bold;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .checkout-page .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
+    margin: 0;
+    padding-left: 0;
   }
 
-  .nav-links li a {
+  .checkout-page .nav-links li a {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     color: #333;
   }
 
-  .btn-pink {
+  .checkout-page .btn-pink {
     background-color: #f56087;
     color: white;
     border: none;
     transition: background 0.3s ease;
   }
 
-  .btn-pink:hover {
-    background-color: #fb4566;
-  }
+  .checkout-page .btn-pink:hover { background-color: #fb4566; }
 
-  /* =======================
-     Responsive Design
-     ======================= */
-
-  /* Large screens (Desktops & Laptops) */
+  /* Desktop/Laptop – keep as-is, just center the card a bit */
   @media (min-width: 1025px) {
-    .card {
-      max-width: 700px;
-      margin: auto;
+    .checkout-page .card {
+      max-width: 720px;
+      margin: 0 auto;
     }
   }
 
-  /* Tablets */
+  /* Tablet (769–1024px) */
   @media (max-width: 1024px) and (min-width: 769px) {
-    .header-title {
-      font-size: 40px;
-    }
-
-    .logo {
-      width: 65px;
-    }
-
-    .brand-name {
-      font-size: 22px;
-    }
-
-    .nav-links li a {
-      font-size: 16px;
-    }
-
-    .card {
-      padding: 20px;
-    }
+    .checkout-page .header-title { font-size: 40px; }
+    .checkout-page .logo { width: 65px; }
+    .checkout-page .brand-name { font-size: 22px; }
+    .checkout-page .nav-links li a { font-size: 16px; }
+    .checkout-page .card { padding: 20px; }
   }
 
-  /* Mobile Phones */
+  /* Mobile (<= 768px) */
   @media (max-width: 768px) {
-    .navbar {
+    .checkout-page .navbar {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
       padding: 15px;
     }
 
-    .header-title {
+    .checkout-page .header-title {
       position: static;
       transform: none;
-      margin: 10px 0;
-      text-align: center;
+      margin: 6px 0 2px;
       font-size: 28px;
     }
 
-    .nav-links {
+    .checkout-page .logo { width: 55px; }
+    .checkout-page .brand-name { font-size: 20px; }
+
+    .checkout-page .nav-links {
       flex-direction: column;
-      gap: 10px;
-      padding-left: 0;
+      gap: 8px;
     }
 
-    .nav-links li a {
-      font-size: 16px;
-    }
+    .checkout-page .nav-links li a { font-size: 16px; }
 
-    .logo {
-      width: 55px;
-    }
-
-    .brand-name {
-      font-size: 20px;
-    }
-
-    .card {
-      padding: 15px;
+    .checkout-page .card {
+      padding: 16px;
       box-shadow: none;
+      border-radius: 12px;
     }
 
-    table.table {
+    /* Order table: allow horizontal scroll on tiny screens */
+    .checkout-page table.table {
       display: block;
-      overflow-x: auto;   /* Horizontal scroll on very small screens */
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       white-space: nowrap;
     }
 
-    table.table th, table.table td {
+    .checkout-page table.table th,
+    .checkout-page table.table td {
       font-size: 14px;
+      padding: 6px;
     }
 
-    button.btn-pink {
+    .checkout-page label.form-label { font-size: 13px; }
+    .checkout-page .form-control {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .checkout-page .btn.btn-pink {
       font-size: 16px;
       padding: 12px;
+      border-radius: 8px;
+    }
+
+    .checkout-page .footer {
+      font-size: 12px;
+      padding: 10px;
+      text-align: center;
     }
   }
 
-  /* Extra small screens (<= 480px, small phones) */
+  /* Extra-small phones (<= 480px) */
   @media (max-width: 480px) {
-    .header-title {
-      font-size: 22px;
-    }
-
-    .logo {
-      width: 45px;
-    }
-
-    .brand-name {
-      font-size: 18px;
-    }
-
-    .nav-links li a {
-      font-size: 14px;
-    }
-
-    table.table th, table.table td {
-      font-size: 12px;
-    }
-
-    button.btn-pink {
+    .checkout-page .header-title { font-size: 22px; }
+    .checkout-page .logo { width: 45px; }
+    .checkout-page .brand-name { font-size: 18px; }
+    .checkout-page .nav-links li a { font-size: 14px; }
+    .checkout-page table.table th,
+    .checkout-page table.table td { font-size: 12px; }
+    .checkout-page .btn.btn-pink {
       font-size: 14px;
       padding: 10px;
     }
@@ -334,5 +315,6 @@
   </script>
 </body>
 </html>
+
 
 
