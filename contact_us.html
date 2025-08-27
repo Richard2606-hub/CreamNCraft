@@ -12,6 +12,7 @@
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <div class="logo">
             <img src="logo.png" alt="Cream & Craft Logo">
@@ -28,12 +29,13 @@
         </nav>
     </header>
 
-
+    <!-- Contact Us Section -->
     <main>
         <section class="contact-section">
             
             <h3>Curious about us? Have enquiries to ask about our ice-cream? Fill out the form below and we’ll reply to you as soon as possible.</h3>
         
+           <br>
             <form method="POST" class="contact-form" id="form">
                 <b><label for="name">Name</label></b>
                 <input type="text" id="name" name="name" required placeholder="Your Name">
@@ -45,16 +47,16 @@
                 <textarea id="message" name="message" required placeholder="Your Message"></textarea>
 
                 <div class="btn-group">
-                    <button type="submit" id="myBtnEventListener">Send Message</button>
+                    <button type="submit" id = myBtnEventListener>Send Message</button>
                     <button type="button" onclick="returnToMenu()">Main Menu</button>
                 </div>
             </form>
 
 
             <script>
-                document.getElementById("myBtnEventListener").addEventListener("click", submit);
+                document.getElementById("myBtnEventListener").addEventListener("click",submit);
 
-                function submit(event){
+                function submit(){
                     event.preventDefault();
 
                     const name = document.querySelector('#name').value;
@@ -62,32 +64,38 @@
                     const message = document.querySelector('#message').value;
 
                     if (!name || !email || !message) {
+                        event.preventDefault(); // Prevent form submission
                         alert('Please fill out all fields.');
-                        return;
                     }
-
                     alert("Thank you! Your message has been submitted.");
                     document.getElementById("form").reset();
 
-                    document.getElementById("myBtnEventListener").removeEventListener("click", submit);
+                    document.getElementById("myBtnEventListener").removeEventListener("click",submit);
+
                 }
 
+                // Handle return to main menu
                 function returnToMenu() {
-                    window.location.href = "main.html"; 
+                    window.location.href = "main.html"; // replace with your main menu page
                 }
-            </script>
+
+
+        </script>
+
         </section>
     </main>
 
-   
+    <!-- Footer Section -->
     <footer>
-        <div class="contact-information">
-            <h2>Our Contact Information</h2>
-            <p>creamncraft@mly.com</p>
-            <p>Contact No: 6019-69983288</p>
-            <p>Address: 215 Jalan Pantai, George Town, Penang, Malaysia</p>
-        </div>
+        <div class = "contact-information">
+                <h2>Our Contact Information</h2>
+                <p>creamncraft@mly.com</p>
+                <p>Contact No: 6019-69983288</p>
+                <p>Address: 215 Jalan Pantai, George Town, Penang, Malaysia</p>
+            </div>
     </footer>
 
 </body>
 </html>
+
+
