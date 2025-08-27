@@ -1,77 +1,223 @@
-/* ===================
-   1. Default Styles (Desktop/Laptop)
-   =================== */
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* You already have these defined:
-   - Header with logo, nav, h1 in center
-   - Contact form centered, max-width 500px
-   - Footer styling
-*/
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f56087;
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  background-color: #f8d2ed;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo img {
+  width: 150px;
+}
+
+.brand-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  font-weight: bold;
+  color: purple;
+  margin-left: 10px;
+}
+
+header nav h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 70px;
+  text-align: center;
+  color: #6c8df0;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -30px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: #333;
+  font-family: 'DM Serif Display', serif;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  transition: font-size 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #6c8df0;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 40px;
+  background-color: #fff;
+  text-align: center;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form label {
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #333;
+  align-self: flex-start;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ebb9b9;
+  border-radius: 5px;
+  font-family: 'DM Serif Display', serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: lightcoral;
+}
+
+.contact-form button {
+  background-color: #f95682;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #fb4566;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Feedback message */
+#form-feedback {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f8d2ed;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'DM Serif Display', serif;
+}
 
 /* ===================
-   2. Mobile/Tablet Styles (Override)
+   Responsive (Mobile/Tablet)
    =================== */
 @media (max-width: 768px) {
-    /* HEADER */
-    header {
-        flex-direction: column;   /* stack logo & nav */
-        text-align: center;
-        padding: 15px;
-    }
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+  }
 
-    header .logo img {
-        width: 100px;
-        margin: 0 auto;
-    }
+  header .logo img {
+    width: 100px;
+    margin-bottom: 5px;
+  }
 
-    .brand-name {
-        font-size: 20px;
-    }
+  .brand-name {
+    font-size: 20px;
+  }
 
-    header nav h1 {
-        font-size: 32px;
-        margin: 15px 0 10px 0;
-        position: static;   /* remove absolute */
-        transform: none;
-    }
+  header nav h1 {
+    font-size: 32px;
+    position: static;
+    transform: none;
+    margin: 10px 0;
+  }
 
-    header nav ul {
-        flex-direction: column; /* stack menu vertically */
-        gap: 10px;
-        margin-top: 10px;
-    }
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
 
-    header nav ul li a {
-        font-size: 18px;
-    }
+  header nav ul li a {
+    font-size: 18px;
+  }
 
-    /* CONTACT FORM */
-    .contact-section {
-        padding: 15px;
-        margin: 10px;
-    }
+  .contact-section {
+    padding: 20px;
+    margin: 10px;
+  }
 
-    .contact-section h3 {
-        font-size: 18px;
-    }
+  .contact-section h3 {
+    font-size: 18px;
+  }
 
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        max-width: 100%;  /* take full screen width */
-        font-size: 16px;
-    }
+  .contact-form input,
+  .contact-form textarea {
+    max-width: 100%;
+    font-size: 16px;
+  }
 
-    .contact-form button {
-        width: 100%;
-        font-size: 16px;
-        padding: 12px;
-        margin-top: 10px;
-    }
+  .contact-form button {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+  }
 
-    /* FOOTER */
-    footer {
-        font-size: 12px;
-        padding: 20px;
-    }
+  footer {
+    font-size: 12px;
+    padding: 15px;
+  }
 }
