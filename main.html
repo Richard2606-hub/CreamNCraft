@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Cream & Craft – premium handcrafted ice cream: Matcha, Choco mate, Cookie&cream." />
+  <title>Cream & Craft</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css">
+ 
+</head>
+<body>
+
+  <!-- Loading Spinner -->
+  <div id="loading-spinner" aria-hidden="false">
+    <div class="spinner" role="status" aria-label="Loading"></div>
+  </div>
+
+  <!-- Cookie Consent Box -->
+  <div id="cookie-consent" role="dialog" aria-labelledby="cookie-heading" aria-describedby="cookie-desc">
+    <div class="cookie-content">
+      <div class="cookie-header">
+        <span class="cookie-icon">🍪</span>
+        <h3 id="cookie-heading" class="cookie-title">We Use Cookies</h3>
+      </div>
+      <p id="cookie-desc" class="cookie-text">
+        We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
+        By clicking "Accept All", you consent to our use of cookies. 
+      </p>
+      <div class="cookie-buttons">
+        <button class="cookie-btn cookie-btn-deny" id="cookie-deny">Deny</button>
+        <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar" role="banner">
+    <div class="logo-container">
+      <img src="logo.png" alt="Cream & Craft" class="logo" loading="lazy" decoding="async">
+      <span class="brand-name">Cream & Craft</span>
+    </div>
+
+    <!-- Hamburger for mobile -->
+    <button class="hamburger" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav id="primary-navigation" class="nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="AboutUs.html"><b>About Us</b></a></li>
+        <li><a href="contact_us.html"><b>Contact Us</b></a></li>
+        <li><a href="Help.html"><b>FAQ</b></a></li>
+        <li><a href="PurchaseHistory.html"><b>History</b></a></li>
+      </ul>
+    </nav>
+
+    <div class="user-actions">
+      <a href="signout.html" id="signout-btn" class="btn-signout">Sign Out</a>
+      <img id="user-icon" src="user.avif" alt="Signed-in user" loading="lazy" decoding="async">
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="main">
+    <section class="brand-context" aria-label="Brand Statement">
+      <div class="brand-context-text">
+        <h2>Cream & Craft Ice Cream</h2>
+        <p>Handcrafted scoops that tell a story in every bite 🍦</p>
+      </div>
+    </section>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <video id="heroVideo" autoplay muted loop playsinline class="hero-video">
+        <source src="Ice-cream.mp4" type="video/mp4">
+        <!-- fallback -->
+      </video>
+      <button id="soundToggle">🔊 Unmute</button>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="hero-text">
+        <h1 id="hero-heading">Welcome to Cream & Craft</h1>
+        <p>Where every scoop is a story</p>
+        <a href="Ice-cream.html" id="shop-now-btn" class="btn">Shop Now</a>
+      </div>
+    </section>
+    
+    <!-- Best Sellers -->
+    <section class="best-sellers" id="about" aria-labelledby="best-heading">
+      <h2 id="best-heading">Our Best Sellers</h2>
+
+      <div class="flavors">
+        <figure class="flavor-card" id="matcha">
+          <img src="Matcha ice-cream.jpeg" alt="Matcha" loading="lazy" decoding="async">
+          <figcaption>
+            <h3>Matcha Ice-cream</h3>
+            <a href="matcha.html" class="flavor-link">View Product</a>
+          </figcaption>
+        </figure>
+
+        <figure class="flavor-card" id="chocolate">
+          <img src="Chocolate ice-cream.jpeg" alt="choco mate" loading="lazy" decoding="async">
+          <figcaption>
+            <h3>Chocolate Ice-cream</h3>
+            <a href="choco mate.html" class="flavor-link">View Product</a>
+          </figcaption>
+        </figure>
+
+        <figure class="flavor-card" id="cookie&cream">
+          <img src="Cookie&Cream ice-cream.jpeg" alt="cookie&cream" loading="lazy" decoding="async">
+          <figcaption>
+            <h3>Cookie&cream Ice-cream</h3>
+            <a href="cookies&cream.html" class="flavor-link">View Product</a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact" role="contentinfo">
+        <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- Floating Cart Button -->
+  <a href="shoppingcart.html" class="btn btn-pink position-fixed d-flex align-items-center justify-content-center"
+     id="cart-btn" style="right: 24px; bottom: 90px; width:56px; height:56px; border-radius:50%; z-index:1600;"
+     aria-label="Go to Cart" title="Go to Cart">
+    🛒
+    <!-- Optional badge -->
+    <span id="cart-count" class="badge bg-light text-dark position-absolute" 
+          style="top:-6px; right:-6px; font-size:0.7rem; display:none;">0</span>
+  </a>
+
+  <script src="script.js" defer></script>
+<script>
+    // Additional script for sign out functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user is logged in
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      
+      if (!isLoggedIn) {
+        // Redirect to sign in page if not logged in
+        window.location.href = 'maindetail.html';
+        return;
+      }
+      
+      // Show user icon since we're logged in
+      const userIcon = document.getElementById('user-icon');
+      if (userIcon) {
+        userIcon.classList.remove('hidden');
+      }
+      
+      // Update cart count if items exist
+      updateCartCount();
+      
+      // Add event listener for sign out button
+      const signoutBtn = document.getElementById('signout-btn');
+      if (signoutBtn) {
+        signoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          // Clear login status
+          localStorage.setItem('isLoggedIn', 'false');
+          // Redirect to sign in page
+          window.location.href = 'signout.html';
+        });
+      }
+    });
+    
+    function updateCartCount() {
+      const cartCount = document.getElementById('cart-count');
+      if (cartCount) {
+        // Example: Get cart items from localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+        if (cartItems.length > 0) {
+          cartCount.textContent = cartItems.length;
+          cartCount.style.display = 'inline-block';
+        } else {
+          cartCount.style.display = 'none';
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if user has already made a choice
+      if (!localStorage.getItem('cookieConsent')) {
+        // Show cookie consent after a short delay
+        setTimeout(function() {
+          const cookieConsent = document.getElementById('cookie-consent');
+          cookieConsent.style.display = 'block';
+          
+          // Add ARIA attributes for accessibility
+          cookieConsent.setAttribute('aria-hidden', 'false');
+        }, 1000);
+      }
+      
+      // Accept button
+      document.getElementById('cookie-accept').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        hideCookieConsent();
+        // Here you would typically initialize all cookies
+      });
+      
+      // Deny button
+      document.getElementById('cookie-deny').addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'denied');
+        hideCookieConsent();
+        // Here you would typically only set essential cookies
+      });
+      
+      function hideCookieConsent() {
+        const cookieConsent = document.getElementById('cookie-consent');
+        cookieConsent.style.animation = 'slideDown 0.5s ease-out';
+        cookieConsent.style.bottom = '-100px';
+        cookieConsent.style.opacity = '0';
+        
+        setTimeout(function() {
+          cookieConsent.style.display = 'none';
+          cookieConsent.setAttribute('aria-hidden', 'true');
+        }, 500);
+      }
+      
+      // Add the slideDown animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideDown {
+          from { bottom: 20px; opacity: 1; }
+          to { bottom: -100px; opacity: 0; }
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+
+</body>
+</html>

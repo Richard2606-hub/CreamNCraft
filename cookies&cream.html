@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookies&cream Ice-Cream | Cream&Craft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    body {
+      margin: 0;
+      font-family:'DM Serif Diaplay';
+      background-color: #fff0f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #f9c8e6;
+      padding:0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+    }
+    
+    .logo span {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      top: 135px;
+      text-align: center;
+      color:purple;
+      font-weight:bold;
+      display:flex;
+      align-items:flex-start;      /* Vertically center */
+      position:absolute;  /* Position it at the center */
+      margin-left: -50px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      gap: 5px; 
+    }
+
+    .logo img {
+      height: 140px;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+      margin: 0 15px;
+      font-size: 22px;
+
+    }
+
+    .product-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    
+    }
+
+    .product-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      color: #3d2dbd;
+      margin-bottom: 10px;
+      font-family:'DM Serif Diaplay';
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      color: #d63384;
+      margin-bottom: 20px;
+      font-family:'DM Serif Diaplay';
+    }
+
+    .product-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      font-family:'DM Serif Diaplay';
+    }
+
+    @media (min-width: 768px) {
+      .product-details {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .product-text {
+        flex: 1;
+      }
+    }
+
+    .home-btn{
+      background-color: #d63384;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+        justify-content: space-between;
+    }
+
+    .home-btn:hover{
+      background-color: #b42a6b;
+    }
+    
+    /* Add to Cart Button Styling */
+    .add-to-cart-btn {
+        background-color: #d63384;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart-btn:hover {
+        background-color: #b42a6b;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+        <img src="logo.png" alt="Cream & Craft Logo">
+        <h1><span class="logo span">Cream&Craft</span></h1>
+    </div>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="ice-cream.html">Menu</a>
+      <a href="AboutUs.html">About Us</a>
+      <a href="contact_us.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <div class="product-container">
+    <div class="product-details">
+      <img src="Cookie&Cream ice-cream.jpeg" alt="Cookie&cream Ice-Cream">
+      <div class="product-text">
+        <h2 class="product-title">Cookie&cream Ice-Cream (473ml)</h2>
+        <div class="product-price">RM15</div>
+        <div class="product-description">
+           A crowd-favorite for a reason. This luscious vanilla base is loaded with chunks of chocolate cookies for a perfectly textured, irresistibly creamy experience. Comforting, nostalgic, and always satisfying.
+        </div>
+          <br>
+            <button class="home-btn" onclick="returnToMenu()">Back</button>
+            <button class="add-to-cart-btn" onclick="addToCart('Cookies&cream Ice-Cream (473ml)', 1,15)">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+    <script>
+        function returnToMenu() {
+          window.location.href = "ice-cream.html"; // replace with your main menu page
+        }
+
+        function addToCart(name, quantity, price) {
+            let cartString = localStorage.getItem('cart') || "";
+            let cart = [];
+
+            // If cartString is not empty, split into items
+            if (cartString !== "") {
+                cart = cartString.split(";");
+            } else {
+                cart = [];
+            }
+
+            // Check if item already exists
+            let found = false;
+            for (let i = 0; i < cart.length; i++) {
+                let [n, q, p] = cart[i].split("|");
+                if (n === name) {
+                    cart[i] = `${n}|${parseInt(q) + quantity}|${p}`;
+                    found = true;
+                    break;
+                }
+            }
+
+    // If not found, add new item
+    if (!found) {
+        cart.push(`${name}|${quantity}|${price}`);
+    }
+
+    // Save back to localStorage
+    localStorage.setItem('cart', cart.join(";"));
+
+    // Redirect to cart page
+    window.location.href = "shoppingcart.html";
+}
+
+    </script>
+
+</body>
+</html>

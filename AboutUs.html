@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us - Cream&Craft</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+    <!--Linking Swiper CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <style>
+        :root {
+            --primary-color: #ff69b4;
+            --secondary-color: #f9c8e6;
+            --background-color: #fff0f8;
+            --text-color: #333;
+            --light-text: #fff;
+            --shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Serif Display', serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .logo img{
+          width:160px;
+          margin-left:20px;
+        }
+
+        header nav h1{
+          font-family:'DM Serif Display';
+          font-size: 50px;
+          text-align: center;
+          color: #6c8df0;
+          font-weight: bold;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: -10px;
+        }
+
+        header nav ul {
+          list-style: none;
+          display: flex;
+          margin-right: 20px;
+        }
+
+        header nav ul li {
+          margin: 0 15px;
+        }
+
+        header nav ul li a {
+         color: #333;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 20px;
+          transition: font-size 0.3s ease;
+        }
+
+        .logo {
+          display: flex;
+          flex-direction: column;
+          align-items: center; 
+          gap: 5px; 
+        }
+
+
+        .brand-name{
+          font-family:'Dancing Script',cursive;
+          font-size:28px;
+          font-weight:bold;
+          color:purple;
+        }
+
+       
+        /* Banner */
+        .hero-banner {
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .banner-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-family: 'DM Serif Display', cursive;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .banner-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+        }
+
+        /* About Section */
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin: 3rem 0;
+            color: var(--primary-color);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image img { width:100%; }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Why Choose Us (Icon Row) */
+        .icons-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+
+        .icons-row .icon {
+            text-align: center;
+            background: #fff;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .icons-row .icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: .5rem;
+        }
+
+        .icons-row .icon h3 {
+            font-size: 1.3rem;
+            margin-bottom: .3rem;
+        }
+
+        @media (max-width:768px) {
+            .icons-row { flex-wrap:wrap; }
+        }
+
+        /*Milestone section*/
+        .Milestone-section{
+            padding: 50px 0 100px;
+            background: var(--light-pink-color);
+        }
+
+        .Milestone-section .Milestone{
+            display: flex;
+            padding:50px;
+            text-align:center;
+            flex-direction:column;
+            align-items: center;
+
+        }
+
+        .Milestone-section .Milestone .milestone-image{
+            width: 180px;
+            height: 180px;
+            object-fit:cover;
+            margin-bottom: 50px;
+            border-radius: var(--border-radius-circle);
+        }
+
+        .Milestone-section .Milestone .title{
+            margin-bottom:16px;
+            font-size: var(--font-size-m);
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--light-text);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <span class="brand-name">Cream&Craft</span>
+    </div>
+
+    <nav>
+        <h1>About Us</h1>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="ice-cream.html">Menu</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="Help.html">FAQ</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <img src="background_icecream.jpg" class="banner-image" alt="">
+    <div class="banner-overlay">
+      <h1 class="banner-title">Our Story</h1>
+      <p class="banner-subtitle">Three generations of passion for crafting the finest ice cream experiences since 1992</p>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about-container" id="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="aboutus.jpg" alt="">
+      </div>
+      <div class="about-text">
+        <h3>Who We Are?</h3>
+        <p>Cream&Craft is a family-founded ice cream brand dedicated to creating hand-crafted, high-quality ice cream made with fresh, locally sourced ingredients. Since opening our first small creamery in 1992, we've been committed to turning simple moments into delicious memories.</p>
+        <p>What began as a small family recipe has grown into a beloved local institution, but we've never lost sight of our roots. Every batch is still made with the same care and attention to detail that my grandmother poured into her original recipes. </p>
+        <p>We partner with local dairy farmers and fruit growers to ensure the freshest ingredients in every scoop. Our ice cream contains no artificial flavors or preservatives - just honest, wholesome goodness.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="about-text">
+    <h2 class="section-title">Why Choose Us ?</h2>
+
+  <!-- Why Choose Us? -->
+  <section class="icons-row">
+    <div class="icon">
+      <img src="freedelivery.png" alt="">
+      <h3>Free Delivery</h3>
+      <span>On All Orders</span>
+    </div>
+    <div class="icon">
+      <img src="return.png" alt="">
+      <h3>24 Hours Returns</h3>
+      <span>Money Return Guarantee</span>
+    </div>
+    <div class="icon">
+      <img src="Gift.png" alt="">
+      <h3>Offer & Gifts</h3>
+      <span>On All Orders</span>
+    </div>
+    <div class="icon">
+      <img src="securepayment.png" alt="">
+      <h3>Secure Payments</h3>
+      <span>Protected by Paypal</span>
+    </div>
+  </section>
+
+  <!--Milestone section-->
+  <section class="Milestone-section">
+    <h2 class="section-title">Milestone</h2>
+    <div class="section-content">
+        <div class="slider-container swiper">
+            <ul class="Milestone-list swiper-wrapper">
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone1.jpg" alt="" class="milestone-image">
+                    <h3 class="title">1992- Birth of Cream & Craft</h3>
+                    <i class="description">Cream&Craft was founded as a humble family-run stall on a small street corner. Using grandmother’s original recipes and a hand-churned ice cream maker, 
+                        the founders served freshly made ice cream to neighbours and passers-by, focusing on quality, warmth, and personal connection.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone2.png" alt="" class="milestone-image">
+                    <h3 class="title">1995-2000- First Growth</h3>
+                    <i class="description">As word spread and loyal customers returned, Cream&Craft introduced its first set of signature flavours—Classic Vanilla, Strawberry Bliss, and Rich Chocolate. 
+                        The growing popularity allowed the business to move into its first brick-and-mortar creamery, creating a cosy space where families could enjoy a scoop together.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone3.jpg" alt="" class="milestone-image">
+                    <h3 class="title">2008- Innovation Era</h3>
+                    <i class="description">Driven by passion and creativity, Cream&Craft began experimenting with unique flavour combinations and seasonal creations. This led to the launch of limited-edition 
+                        recipes such as Honey Lavender, Burnt Caramel and Matcha Almond, which quickly became fan favourites and set the brand apart.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone4.png" alt="" class="milestone-image">
+                    <h3 class="title">2012- Local Partnerships</h3>
+                    <i class="description">Committed to using only the freshest ingredients, Cream&Craft established formal partnerships with local dairy farmers and fruit growers. These collaborations ensured
+                         sustainable sourcing, better product quality and stronger support for the local community.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone5.jpg" alt="" class="milestone-image">
+                    <h3 class="title">2017 – Expansion</h3>
+                    <i class="description">With its reputation growing across the region, the brand opened multiple new stores in nearby towns. Each outlet retained the same handcrafted preparation methods 
+                        and welcoming atmosphere, allowing more customers to experience Cream&Craft’s unique approach to ice cream.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone6.jpg" alt="" class="milestone-image">
+                    <h3 class="title">2024 – Digital Transformation</h3>
+                    <i class="description">To serve a broader audience, Cream&Craft launched its own e-commerce platform and started nationwide delivery. Customers could now order their favourite flavours 
+                        online and enjoy handcrafted ice cream delivered directly to their homes, while still experiencing the same artisanal quality.</i>
+                </li>
+            </ul>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+    </div>
+
+
+  </section>
+</main>
+
+<!--Linking Swiper script-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+<footer>
+   <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

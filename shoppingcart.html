@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shopping Cart</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+
+
+
+</head>
+<style>
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fff0f8;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #f9c8e6;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo img {
+    width: 150px;
+    margin-left: 20px;
+}
+
+header nav h1 {
+    font-family:'DM Serif Display' ;
+    font-size: 50px;
+    text-align: center;
+    color: #6c8df0;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -10px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: font-size 0.3s ease;
+}
+
+/* Cart Container */
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px;
+    text-align: center;
+}
+
+/* Cart Icon */
+.cart-icon {
+    font-size: 50px;
+    position: relative;
+}
+
+.cart-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Number badge */
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 14px;
+    display: none;
+}
+
+/* Cart Items Table */
+.cart-items {
+    margin-top: 20px;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.cart-items th, .cart-items td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.cart-items th {
+    background-color: #f8d2ed;
+}
+
+/* Button */
+.btn {
+    background-color: pink;
+    color: rgb(222, 65, 91);
+    border: none;
+    padding: 12px 25px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+a {
+  font-size: 24px;       /* text size */
+  font-weight: bold;     /* make it bold */
+  color: rgb(111, 132, 248);         /* text color */
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 5px; 
+}
+
+.brand-name {
+    font-family: 'Dancing Script', cursive; /* or any font you want */
+    font-size: 28px; /* adjust size here */
+    font-weight: bold;
+    color: purple;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    
+}
+
+</style>
+</head>
+<body>
+
+ 
+
+<header>
+    <div class="logo">
+    <img src="logo.png" alt="Logo">
+    <span class="brand-name">Cream&Craft</span>
+</div>
+
+
+    <nav>
+        <h1>Shopping Cart</h1>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="ice-cream.html">Menu</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="contact_us.html">Contact Us</li>
+            <li><a href="Help.html">Help</a></li>
+
+        </ul>
+    </nav>
+</header>
+
+<div class="cart-container">
+    <div class="cart-icon">
+        <img src="shoppingcart.png" alt="Cart">
+        <span class="cart-count">0</span>
+    </div>
+
+    <h2 class="cart-message">Your cart is empty</h2>
+
+    <!-- Table for cart items -->
+    <table class="cart-items" style="display:none;">
+        <thead>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price (RM)</th>
+        <th>Total (RM)</th>
+    </tr>
+</thead>
+        <tbody></tbody>
+    </table>
+
+    <a href="Ice-cream.html" class="btn">Continue shopping</a>
+    <a href="checkout.html" class="btn">Proceed to Checkout</a>
+</div>
+
+
+</div>
+
+<script>
+let cartTableBody = document.querySelector(".cart-items tbody");
+let cartCount = document.querySelector(".cart-count");
+let cartMessage = document.querySelector(".cart-message");
+let cartTable = document.querySelector(".cart-items");
+
+function renderCart() {
+    let cartString = localStorage.getItem('cart') || "";
+    let cart = cartString ? cartString.split(";") : [];
+    cartTableBody.innerHTML = "";
+
+    if (cart.length > 0 && cart[0] !== "") {
+        cartCount.textContent = cart.length;
+        cartCount.style.display = "inline-block";
+        cartMessage.style.display = "none";
+        cartTable.style.display = "table";
+
+        let grandTotal = 0;
+        cart.forEach((item, index) => {
+            let [name, qty, price] = item.split("|");
+            let total = parseFloat(price) * parseInt(qty);
+            grandTotal += total;
+
+            let row = `
+                <tr>
+                    <td>${name}</td>
+                    <td>${qty}</td>
+                    <td>RM ${parseFloat(price).toFixed(2)}</td>
+                    <td>RM ${total.toFixed(2)}</td>
+                    <td>
+                        <button onclick="removeFromCart(${index})" 
+                                style="background:red;color:white;border:none;padding:5px 10px;cursor:pointer;">
+                            Remove
+                        </button>
+                    </td>
+                </tr>`;
+            cartTableBody.innerHTML += row;
+        });
+
+        cartTableBody.innerHTML += `
+            <tr>
+                <td colspan="4" style="text-align:right; font-weight:bold;">Grand Total:</td>
+                <td style="font-weight:bold;">RM ${grandTotal.toFixed(2)}</td>
+            </tr>
+        `;
+    } else {
+        cartCount.style.display = "none";
+        cartMessage.style.display = "block";
+        cartTable.style.display = "none";
+    }
+}
+
+function removeFromCart(index) {
+    let cartString = localStorage.getItem('cart') || "";
+    let cart = [];
+
+    if (cartString !== "") {
+        cart = cartString.split(";");
+    }
+
+    let newCart = [];
+    for (let i = 0; i < cart.length; i++) {
+        if (i !== index) {
+            newCart.push(cart[i]);
+        }
+    }
+
+    localStorage.setItem('cart', newCart.join(";"));
+
+    // Refresh cart table instantly
+    renderCart();
+}
+
+// First load
+renderCart();
+</script>
+    <footer>
+        <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

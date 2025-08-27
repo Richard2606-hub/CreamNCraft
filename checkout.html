@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+  .header-title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'DM Serif Display', serif;
+        font-size: 50px;
+        color: #6c8df0;
+        font-weight: bold;
+    }
+</style>
+<body class="checkout-page">
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="logo.png" alt="Cream & Craft" class="logo">
+      <span class="brand-name">Cream & Craft</span>
+    </div>
+    <div class="header-title">Check Out</div>
+    <nav id="primary-navigation" class="nav">
+      <ul class="nav-links">
+        <li><a href="main.html"><b>Home</b></a></li>
+        <li><a href="aboutus.html"><b>About Us</b></a></li>
+        <li><a href="contact_us.html"><b>Contact Us</b></a></li>
+        <li><a href="shoppingcart.html"><b>Cart</b></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Checkout Section -->
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card p-4 shadow-lg rounded-4">
+          <h3 class="text-center mb-4">Order Summary</h3>
+          <table class="table table-striped" id="orderTable">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td id="totalPrice"><strong>RM0</strong></td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <form id="checkoutForm">
+            <div class="mb-3">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" id="usernames" readonly>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Card Number</label>
+              <input type="text" class="form-control" id="cardNumber" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Expiry Date</label>
+              <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">CVV</label>
+              <input type="password" class="form-control" id="cvv" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Delivery Address</label>
+              <textarea class="form-control" id="address" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-pink w-100">Confirm Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      //  Load username
+      let Username = localStorage.getItem("username");
+      $("#usernames").val(Username);
+
+      // Load cart
+      let cartString = localStorage.getItem("cart") || "";
+      let cart = cartString ? cartString.split(";").map(item => {
+        let [n, q, p] = item.split("|");
+        return { name: n, quantity: parseInt(q), price: parseFloat(p) };
+      }) : [];
+
+      let totalPrice = 0;
+      $.each(cart, function (i, item) {
+        $("#orderTable tbody").append(
+          `<tr><td>${item.name} (x${item.quantity})</td><td>RM${(item.price * item.quantity).toFixed(2)}</td></tr>`
+        );
+        totalPrice += item.price * item.quantity;
+      });
+      $("#totalPrice").html(`<strong>RM${totalPrice.toFixed(2)}</strong>`);
+
+      // Handle checkout
+      $("#checkoutForm").submit(function (e) {
+        e.preventDefault();
+        let usernameField = $("#usernames").val();
+
+        if (!usernameField) {
+          alert("You must sign in before placing an order!");
+          return;
+        }
+
+        let order = {
+          username: usernameField,
+          firstName: $("#firstName").val(),
+          lastName: $("#lastName").val(),
+          cart: cart,
+          cardNumber: $("#cardNumber").val(),
+          expiryDate: $("#expiryDate").val(),
+          cvv: $("#cvv").val(),
+          address: $("#address").val(),
+          total: totalPrice
+        };
+
+        let orders = JSON.parse(localStorage.getItem("orders")) || [];
+        orders.push(order);
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        alert("Order placed successfully!");
+        localStorage.removeItem("cart");
+        window.location.href = "orderconfirmation.html";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Cream&Craft</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #ff69b4;
+      --secondary-color: #f9c8e6;
+      --background-color: #fff0f8;
+      --text-color: #333;
+      --light-text: #fff;
+      --whiteColor:#f5f5f5;
+      --shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Serif Display', serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #f9c8e6; /* pink background */
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header .logo img {
+      width: 150px;
+      margin-left: 20px;
+    }
+
+  header nav h1 {
+      font-family:'DM Serif Display';
+      font-size: 50px;
+      text-align: center;
+      color: #6c8df0;
+      font-weight: bold;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: -10px;
+    }
+
+  header nav ul {
+      list-style: none;
+      display: flex;
+      margin-right: 20px;
+    }
+
+    header nav ul li {
+      margin: 0 15px;
+  }
+
+  header nav ul li a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      transition: font-size 0.3s ease;
+  }
+
+  .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      gap: 5px; 
+  }
+
+  .brand-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      font-weight: bold;
+      color: purple;
+  }
+
+
+    .faq-header {
+      background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('faqheader.png');
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6% 3%;
+      border-radius: 30px;
+      color: var(--light-text);
+    }
+
+    .header-title {
+      font-size: 48px;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-desc {
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .search {
+      width: 60%;
+      height: 50px;
+      background-color: var(--whiteColor);
+      margin-top: 5%;
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+    }
+
+    .search input {
+      width: 80%;
+      height: 100%;
+      padding: 1% 3%;
+      background: transparent;
+      border: none;
+    }
+
+    .search button {
+      width: 20%;
+      min-width: 100px;
+      height: 100%;
+      background-color: var(--primary-color);
+      color: var(--whiteColor);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .search button:hover {
+      background-color: var(--text-color);
+    }
+
+    .faq {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      padding: 3%;
+    }
+
+  
+
+    .faq-img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .faq-box {
+      flex: 1;
+      min-width: 320px;
+      padding: 2% 0 4% 4%;
+      border-left: 2px solid var(--primary-color);
+    }
+
+    .faq-wrapper {
+      width: 100%;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--text-color);
+    }
+
+    .faq-title {
+      display: block;
+      position: relative;
+      width: 100%;
+      letter-spacing: 1.2px;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+
+    .faq-title:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-style: solid;
+      border-width: 2px 2px 0 0;
+      transform: rotate(135deg);
+      transition: 0.4s;
+    }
+
+    .faq-detail {
+      line-height: 1.5;
+      letter-spacing: 1px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+      font-size: 14px;
+    }
+
+    .faq-trigger {
+      display: none;
+    }
+
+    .faq-trigger:checked + .faq-title + .faq-detail {
+      max-height: 300px;
+    }
+
+    .faq-trigger:checked + .faq-title::after {
+      transform: rotate(-45deg);
+    }
+
+    @media screen and (max-width:680px) {
+      .search { width: 100%; }
+      .faq-title { font-size: 20px; }
+    }
+
+    /* Footer */
+        footer {
+            background-color: var(--text-color);
+            color: var(--light-text);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+  </style>
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <span class="brand-name">Cream&Craft</span>
+    </div>
+
+    <nav>
+        <h1>Help</h1>
+        <ul>
+            <li><a href="main.html">Home</a></li>
+            <li><a href="ice-cream.html">Menu</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="faq-header">
+  <h1 class="header-title">FAQ</h1>
+  <p class="header-desc">Frequently Asked Questions</p>
+  <div class="search">
+    <input type="text" id="faqSearch" placeholder="Search...">
+    <button>Search</button>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq-name">
+    <h1 class="faq-subheader">Have <br> Questions❓</h1> <br><br>
+    <img class="faq-img" src="faq-img.png"><br><br><br><br>
+    <img class="faq-img" src="faq-image2.png"><br><br><br><br>
+    <img class="faq-img" src="faq-images3.png">
+
+  </div>
+  <div class="faq-box">
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-1">
+      <label class="faq-title" for="faq-trigger-1">Do you offer delivery 🚚?</label>
+      <div class="faq-detail"><p>Yes! We offer delivery within selected areas. Simply enter your delivery address at checkout and available delivery options will be shown.</p></div>
+    </div>
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-2">
+      <label class="faq-title" for="faq-trigger-2">Do you offer cash-on-delivery 💵?</label>
+      <div class="faq-detail"><p>Currently we do not offer cash-on-delivery. All orders must be paid online during checkout.</p></div>
+    </div>
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-3">
+      <label class="faq-title" for="faq-trigger-3">Are your products halal-certified 🍦?</label>
+      <div class="faq-detail"><p>Yes, all of our ingredients are sourced from halal-certified suppliers and our production process complies with halal guidelines.</p></div>
+    </div>
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-4">
+      <label class="faq-title" for="faq-trigger-4">Can I cancel my order 🚫?</label>
+      <div class="faq-detail"><p>You may cancel your order if it has not been dispatched yet. Please contact us as soon as possible. Once the order is on the way, it can no longer be cancelled or refunded.</p></div>
+    </div>
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-5">
+      <label class="faq-title" for="faq-trigger-5">Can I apply multiple promo codes in one order 🎟️?</label>
+      <div class="faq-detail"><p>Only one promo code can be used per order.</p></div>
+    </div>
+
+     <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-6">
+      <label class="faq-title" for="faq-trigger-6">I forgot to apply my promo code. Can you add it for me after checkout 🎟️?</label>
+      <div class="faq-detail"><p>Unfortunately promo codes must be applied during checkout and cannot be added afterwards.</p></div>
+    </div>
+
+     <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-7">
+      <label class="faq-title" for="faq-trigger-7">How do I store the ice cream after delivery ❄️?</label>
+      <div class="faq-detail"><p>Please place the ice cream in your freezer immediately upon receiving it. We recommend keeping it at –18 °C or below for best quality.</p></div>
+    </div>
+
+     <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-8">
+      <label class="faq-title" for="faq-trigger-8">Can I change my delivery address after placing an order 📍?</label>
+      <div class="faq-detail"><p>ou may change the delivery address before your order is dispatched. Please contact our support team as soon as possible to update your delivery details.</p></div>
+    </div>
+
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-9">
+      <label class="faq-title" for="faq-trigger-9">Do you accept returns or refunds 🔄?</label>
+      <div class="faq-detail"><p>If you receive a damaged or incorrect item, please contact us within 24 hours of delivery (with photo evidence) and we will arrange a replacement or full refund.</p></div>
+    </div>
+
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-10">
+      <label class="faq-title" for="faq-trigger-10">Do you charge a delivery fee 💰?</label>
+      <div class="faq-detail"><p>No — delivery is completely free for all orders within our service area. There is no minimum spend and no hidden charges.</p></div>
+    </div>
+
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-11">
+      <label class="faq-title" for="faq-trigger-11">Is there a minimum order amount 🍨?</label>
+      <div class="faq-detail"><p>No, there is no minimum order. You can order as little as one tub.</p></div>
+    </div>
+
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-12">
+      <label class="faq-title" for="faq-trigger-12">What time do you deliver ⌛?</label>
+      <div class="faq-detail"><p>We deliver daily between 10:00 AM and 10:00 PM, including weekends and public holidays.</p></div>
+    </div>
+
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-13">
+      <label class="faq-title" for="faq-trigger-13">How do I contact customer support 📞?</label>
+      <div class="faq-detail"><p>You can reach us via WhatsApp (+6019-69983288) or email (creamncraft@mly.com).</p></div>
+    </div>
+
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-14">
+      <label class="faq-title" for="faq-trigger-14">Do you have a physical store 🍦?</label>
+      <div class="faq-detail"><p>Yes, we do! You’re welcome to visit our creamery at 215 Jalan Pantai, George Town, Penang, Malaysia — all flavours are available for dine-in and takeaway.</p></div>
+    </div>
+
+
+  </div>
+</section>
+
+<button
+  id="scrollTopBtn"
+  style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 15px;border:none;border-radius:50%;box-shadow:0 4px 8px rgba(0,0,0,0.2);background-color:var(--primary-color);color:var(--whiteColor);cursor:pointer;font-size:18px;">
+▲
+</button>
+
+<footer>
+  <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
+</footer>
+
+<script>
+
+  // Live FAQ search (case-insensitive, matches title only)
+  const searchInput = document.getElementById('faqSearch');
+  const faqItems   = document.querySelectorAll('.faq-wrapper');
+
+  searchInput.addEventListener('input', (event) => {
+    const query = event.target.value.toLowerCase();
+    faqItems.forEach(item => {
+      const title = item.querySelector('.faq-title').textContent.toLowerCase();
+      item.style.display = title.includes(query) ? 'block' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>

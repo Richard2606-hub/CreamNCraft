@@ -1,0 +1,167 @@
+/* Basic Reset */
+* {
+    grid-template-rows: 100px auto 50px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color:#f56087;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #f8d2ed;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+header .logo img {
+    width: 150px;
+    margin-left: 20px;
+    flex-direction:column ;
+    display: flex;
+    align-items: center; 
+    gap: 5px;
+
+
+}
+
+
+
+header nav h1{
+  font-family:'DM Serif Diaplay';
+  font-size: 70px;
+  text-align: center;
+  color:#6c8df0;
+  font-weight:bold;
+  display:flex;
+  align-items:flex-start;      /* Vertically center */
+  margin-top: -30px;
+  position:absolute;  /* Position it at the center */
+  left: 50%;  /* Center horizontally */
+  transform: translateX(-50%);  /* Adjust the exact center */
+
+}
+
+
+.brand-name {
+    font-family: 'Dancing Script', cursive; /* or any font you want */
+    font-size: 28px; /* adjust size here */
+    font-weight: bold;
+    color:purple;
+    margin-left: 10px;
+    
+}
+
+
+header nav ul {
+    list-style: none;
+    display:flex;
+
+}
+
+header nav ul li {
+    margin: 0 15px;
+    
+}
+
+header nav ul li a {
+    color: #333;
+    font-family:'DM Serif Diaplay';
+    text-decoration: none;
+    font-weight: bold;
+    margin-right:0%;
+    font-size: 25px;
+    transition: font-size 0.3s ease;
+
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h3 {
+    font-family:'DM Serif Diaplay';
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form label {
+    font-family:'DM Serif Diaplay';
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #333;
+    
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ebb9b9;
+    border-radius: 5px;
+    font-family:'DM Serif Diaplay';
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color:lightcoral;
+}
+
+.contact-form button {
+    background-color: #f95682;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.contact-form button:hover {
+    background-color: #fb4566;
+}
+
+/* Footer Styles */
+footer {
+    background-color:#f8d2ed;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    font-family:'DM Serif Diaplay';
+
+}
