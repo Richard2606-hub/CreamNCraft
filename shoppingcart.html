@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- ✅ Make responsive on phone & tablet -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shopping Cart</title>
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -36,6 +39,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* ✅ allow wrapping on small screens */
 }
 
 header .logo img {
@@ -59,10 +63,12 @@ header nav ul {
     list-style: none;
     display: flex;
     margin-right: 20px;
+    flex-wrap: wrap; /* ✅ allow nav items to wrap */
+    gap: 10px;
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 header nav ul li a {
@@ -78,7 +84,7 @@ header nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 150px;
+    padding: 50px; /* ✅ reduce padding for mobile */
     text-align: center;
 }
 
@@ -109,7 +115,7 @@ header nav ul li a {
 /* Cart Items Table */
 .cart-items {
     margin-top: 20px;
-    width: 80%;
+    width: 100%; /* ✅ full width for responsiveness */
     border-collapse: collapse;
 }
 
@@ -169,6 +175,29 @@ footer {
     text-align: center;
     padding: 2rem;
     margin-top: 3rem;
+}
+
+/* ✅ Responsive tweaks */
+@media (max-width: 768px) {
+    header nav h1 {
+        font-size: 28px;
+        position: static;
+        transform: none;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    .cart-container {
+        padding: 20px;
+    }
+
+    a {
+        font-size: 18px;
+    }
 }
 </style>
 </head>
