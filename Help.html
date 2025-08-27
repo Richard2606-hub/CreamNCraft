@@ -33,116 +33,113 @@
       line-height: 1.6;
     }
 
+    /* ✅ Responsive Header */
     header {
-      background-color: #f9c8e6; /* pink background */
-      padding: 10px 0;
+      background-color: var(--secondary-color);
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
     }
 
-    header .logo img {
-      width: 150px;
-      margin-left: 20px;
-    }
-
-  header nav h1 {
-      font-family:'DM Serif Display';
-      font-size: 50px;
-      text-align: center;
-      color: #6c8df0;
-      font-weight: bold;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      margin-top: -10px;
-    }
-
-  header nav ul {
-      list-style: none;
-      display: flex;
-      margin-right: 20px;
-    }
-
-    header nav ul li {
-      margin: 0 15px;
-  }
-
-  header nav ul li a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 20px;
-      transition: font-size 0.3s ease;
-  }
-
-  .logo {
+    header .logo {
       display: flex;
       flex-direction: column;
       align-items: center; 
-      gap: 5px; 
-  }
+      gap: 5px;
+    }
 
-  .brand-name {
+    header .logo img {
+      width: 120px;
+    }
+
+    .brand-name {
       font-family: 'Dancing Script', cursive;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: bold;
       color: purple;
-  }
+    }
 
+    header nav h1 {
+      font-family: 'DM Serif Display';
+      font-size: 36px;
+      text-align: center;
+      color: #6c8df0;
+      font-weight: bold;
+      margin: 0 auto;
+    }
 
+    header nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    header nav ul li a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    /* ✅ FAQ Section */
     .faq-header {
       background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('faqheader.png');
       background-position: center;
-      background-repeat:no-repeat;
       background-size: cover;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 6% 3%;
-      border-radius: 30px;
+      padding: 5% 3%;
+      border-radius: 20px;
       color: var(--light-text);
+      text-align: center;
     }
 
     .header-title {
-      font-size: 48px;
-      letter-spacing: 1.5px;
+      font-size: 40px;
       margin-bottom: 0.5rem;
     }
 
     .header-desc {
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-align: center;
+      font-size: 16px;
     }
 
     .search {
-      width: 60%;
-      height: 50px;
+      width: 80%;
+      max-width: 500px;
+      height: 45px;
       background-color: var(--whiteColor);
-      margin-top: 5%;
-      border-radius: 30px;
+      margin-top: 20px;
+      border-radius: 25px;
       display: flex;
       justify-content: space-between;
       padding: 5px;
     }
 
     .search input {
-      width: 80%;
-      height: 100%;
-      padding: 1% 3%;
-      background: transparent;
+      width: 75%;
       border: none;
+      outline: none;
+      padding: 0 10px;
     }
 
     .search button {
-      width: 20%;
-      min-width: 100px;
-      height: 100%;
+      flex: 1;
       background-color: var(--primary-color);
       color: var(--whiteColor);
       border: none;
-      border-radius: 30px;
+      border-radius: 25px;
       cursor: pointer;
       transition: 0.3s ease;
     }
@@ -152,30 +149,33 @@
     }
 
     .faq {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
-      align-items: flex-start;
-      padding: 3%;
+      gap: 20px;
+      padding: 20px;
     }
 
-  
+    .faq-name {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
 
     .faq-img {
       width: 100%;
-      max-width: 400px;
+      max-width: 300px;
+      margin: 20px auto;
     }
 
     .faq-box {
-      flex: 1;
-      min-width: 320px;
-      padding: 2% 0 4% 4%;
+      flex: 2;
+      min-width: 300px;
+      padding: 10px 20px;
       border-left: 2px solid var(--primary-color);
     }
 
     .faq-wrapper {
-      width: 100%;
-      padding: 1.5rem 0;
+      padding: 1rem 0;
       border-bottom: 1px solid var(--text-color);
     }
 
@@ -183,11 +183,11 @@
       display: block;
       position: relative;
       width: 100%;
-      letter-spacing: 1.2px;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
       color: var(--primary-color);
       cursor: pointer;
+      padding-right: 20px;
     }
 
     .faq-title:after {
@@ -204,17 +204,13 @@
     }
 
     .faq-detail {
-      line-height: 1.5;
-      letter-spacing: 1px;
+      font-size: 14px;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-in-out;
-      font-size: 14px;
     }
 
-    .faq-trigger {
-      display: none;
-    }
+    .faq-trigger { display: none; }
 
     .faq-trigger:checked + .faq-title + .faq-detail {
       max-height: 300px;
@@ -224,20 +220,47 @@
       transform: rotate(-45deg);
     }
 
-    @media screen and (max-width:680px) {
-      .search { width: 100%; }
-      .faq-title { font-size: 20px; }
+    /* ✅ Scroll-to-top button */
+    #scrollTopBtn {
+      display:none;
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      padding:10px 15px;
+      border:none;
+      border-radius:50%;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      background-color:var(--primary-color);
+      color:var(--whiteColor);
+      cursor:pointer;
+      font-size:18px;
     }
 
-    /* Footer */
-        footer {
-            background-color: var(--text-color);
-            color: var(--light-text);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
+    /* ✅ Footer */
+    footer {
+      background-color: var(--text-color);
+      color: var(--light-text);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
 
+    /* ✅ Responsive tweaks */
+    @media (max-width: 768px) {
+      header nav h1 { font-size: 28px; }
+      header nav ul { flex-direction: column; }
+      .header-title { font-size: 32px; }
+      .faq { flex-direction: column; }
+      .faq-box { border-left: none; border-top: 2px solid var(--primary-color); }
+    }
+
+    @media (max-width: 480px) {
+      header .logo img { width: 90px; }
+      .brand-name { font-size: 20px; }
+      header nav h1 { font-size: 24px; }
+      .faq-title { font-size: 18px; }
+      .search { width: 100%; }
+    }
   </style>
 </head>
 
@@ -388,4 +411,5 @@
 
 </body>
 </html>
+
 
