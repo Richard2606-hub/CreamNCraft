@@ -60,13 +60,18 @@
       gap: 20px;
     }
 
-    nav h1 {
-      font-size: 36px;
-      color: #6c8df0;
-      font-weight: bold;
-      text-align: center;
-      margin: 0 15px;
-    }
+    /* Desktop - Help centered */
+nav h1 {
+  font-size: 36px;
+  color: #6c8df0;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;   /* center over nav */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
 
     nav ul {
       list-style: none;
@@ -232,7 +237,12 @@
         text-align: center;
       }
 
-      nav h1 { font-size:28px; margin:10px 0; }
+     nav h1 {
+  position: static; /* remove absolute positioning */
+  transform: none;  /* remove translate */
+  font-size: 28px;
+  margin: 10px 0;
+}
 
       nav ul {
         display:none;
@@ -430,3 +440,4 @@
   </script>
 </body>
 </html>
+
