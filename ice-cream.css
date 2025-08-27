@@ -24,7 +24,7 @@
     font-size: 28px;
     font-weight: bold;
     color: purple;
-    margin-left: -10px;
+    margin-left: 0px;
 }
 
 nav ul {
@@ -259,3 +259,4 @@ footer {
     padding: 1.5rem;
   }
 }
+
