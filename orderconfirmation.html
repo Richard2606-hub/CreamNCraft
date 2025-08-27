@@ -16,15 +16,13 @@
     /* Header */
     /* Header */
 header {
-  background-color: #f9c8e6;
+  background-color: #fff0f8;
   padding: 10px 20px;
   width: 100%;
   margin: 0;
   display: flex;
-  flex-wrap: wrap;   /* allows wrapping on smaller screens */
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
+  justify-content: space-between; /* logo left, nav right */
 }
 
 .logo {
@@ -34,37 +32,20 @@ header {
   gap: 5px;
 }
 
-.logo img {
-  width: 120px;
-  height: auto;
-}
-
-.brand-name {
-  font-family: 'Dancing Script', cursive;
-  font-size: 24px;
-  font-weight: bold;
-  color: purple;
-}
-
-/* Title in the middle */
 .header-title {
-  flex: 1 1 100%;  /* takes full width when wrapping */
   font-family: 'DM Serif Display', serif;
-  font-size: 40px;
+  font-size: 32px;
   color: #6c8df0;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 0 auto;   /* keeps it centered */
   text-align: center;
 }
 
-/* Nav */
 header nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
   padding: 0;
-  margin: 10px 0;
-  justify-content: center;
+  margin: 0;
 }
 
 header nav ul li {
@@ -154,69 +135,65 @@ footer {
 /* Tablet */
 @media (max-width: 1024px) {
   .header-title {
-    font-size: 32px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .logo img {
-    width: 100px;
-  }
-
-  .brand-name {
-    font-size: 20px;
-  }
-
-  .header-title {
     font-size: 26px;
   }
 
   header nav ul li a {
     font-size: 16px;
   }
+}
 
-  .confirmation-box {
-    width: 95%;
-    margin: 20px auto;
-    padding: 15px;
+/* Mobile */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 20px;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;   /* allow nav links to wrap to next line */
+    justify-content: center;
+  }
+
+  header nav ul li {
+    margin: 5px;
   }
 }
 
 /* Extra small phones */
 @media (max-width: 480px) {
   .header-title {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   header nav ul li a {
     font-size: 14px;
   }
 }
-
 </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">
+  <!-- Left -->
+  <div class="logo">
     <img src="logo.png" alt="Logo">
     <span class="brand-name">Cream&Craft</span>
-</div>
+  </div>
 
-    <!-- Center: Page title -->
-    <div class="header-title">Order Confirmation</div>
+  <!-- Center -->
+  <div class="header-title">Order Confirmation</div>
 
-    <!-- Right: Navigation -->
-    <nav>
-        <ul>
-            <li><a href="main.html">Home</a></li>
-            <li><a href="AboutUs.html">About Us</a></li>
-            <li><a href="Ice-cream.html">Menu</a></li>
-            <li><a href="shoppingcart.html">Cart</a></li>
-        </ul>
-    </nav>
+  <!-- Right -->
+  <nav>
+    <ul>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="Ice-cream.html">Menu</a></li>
+      <li><a href="shoppingcart.html">Cart</a></li>
+    </ul>
+  </nav>
 </header>
+
 
 <!-- Confirmation Box -->
 <div class="confirmation-box">
@@ -271,5 +248,6 @@ footer {
 
 </body>
 </html>
+
 
 
