@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+    <!--Linking Swiper CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <style>
@@ -20,7 +21,11 @@
             --shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'DM Serif Display', serif;
@@ -79,6 +84,7 @@
           gap: 5px; 
         }
 
+
         .brand-name{
           font-family:'Dancing Script',cursive;
           font-size:28px;
@@ -86,6 +92,7 @@
           color:purple;
         }
 
+       
         /* Banner */
         .hero-banner {
             width: 100%;
@@ -156,10 +163,16 @@
             padding: 2rem;
         }
 
-        .about-image { flex: 1; min-width: 300px; }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
         .about-image img { width:100%; }
 
-        .about-text { flex: 1; min-width: 300px; }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
 
         .about-text h3 {
             font-size: 2.5rem;
@@ -216,6 +229,7 @@
             text-align:center;
             flex-direction:column;
             align-items: center;
+
         }
 
         .Milestone-section .Milestone .milestone-image{
@@ -231,6 +245,7 @@
             font-size: var(--font-size-m);
         }
 
+
         /* Footer */
         footer {
             background-color: var(--text-color);
@@ -240,39 +255,64 @@
             margin-top: 3rem;
         }
 
-        /* ---------------- MOBILE FIXES ---------------- */
-        @media (max-width: 768px) {
-          header {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-          }
+        @media (max-width: 1024px) {
+  header nav h1 {
+    font-size: 36px;   /* smaller heading */
+  }
 
-          header nav {
-            margin-top: 10px;
-            position: static;
-          }
+  header nav ul li a {
+    font-size: 18px;   /* reduce menu text */
+  }
 
-          header nav h1 {
-            font-size: 1.8rem;
-            margin: 10px 0;
-            position: static;
-            transform: none;
-          }
+  .hero h2 {
+    font-size: 40px;   /* adjust hero text */
+  }
+}
 
-          header nav ul {
-            flex-direction: column;
-            gap: 10px;
-            margin: 10px 0 0 0;
-          }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;   /* stack logo, title, and menu */
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+  }
 
-          header nav ul li a {
-            font-size: 18px;
-          }
-        }
+  header nav h1 {
+    position: static;         /* remove absolute centering */
+    transform: none;
+    margin: 10px 0;
+    font-size: 28px;          /* smaller size */
+  }
+
+  header nav ul {
+    flex-direction: column;   /* vertical menu */
+    margin: 10px 0 0 0;
+    gap: 10px;
+  }
+
+  header nav ul li {
+    margin: 0;
+  }
+
+  header nav ul li a {
+    font-size: 18px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+    padding: 15px;
+  }
+
+  .about-container {
+    margin: 10px;
+    padding: 12px;
+  }
+}
     </style>
 </head>
 <body>
+
+
 <header>
     <div class="logo">
         <img src="logo.png" alt="Logo">
@@ -289,7 +329,6 @@
         </ul>
     </nav>
 </header>
-
 <main>
   <!-- Hero Banner -->
   <section class="hero-banner">
@@ -349,18 +388,58 @@
     <div class="section-content">
         <div class="slider-container swiper">
             <ul class="Milestone-list swiper-wrapper">
-                <!-- Your milestone slides remain unchanged -->
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone1.jpg" alt="" class="milestone-image">
+                    <h3 class="title">1992- Birth of Cream & Craft</h3>
+                    <i class="description">Cream&Craft was founded as a humble family-run stall on a small street corner. Using grandmother’s original recipes and a hand-churned ice cream maker, 
+                        the founders served freshly made ice cream to neighbours and passers-by, focusing on quality, warmth, and personal connection.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone2.png" alt="" class="milestone-image">
+                    <h3 class="title">1995-2000- First Growth</h3>
+                    <i class="description">As word spread and loyal customers returned, Cream&Craft introduced its first set of signature flavours—Classic Vanilla, Strawberry Bliss, and Rich Chocolate. 
+                        The growing popularity allowed the business to move into its first brick-and-mortar creamery, creating a cosy space where families could enjoy a scoop together.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone3.jpg" alt="" class="milestone-image">
+                    <h3 class="title">2008- Innovation Era</h3>
+                    <i class="description">Driven by passion and creativity, Cream&Craft began experimenting with unique flavour combinations and seasonal creations. This led to the launch of limited-edition 
+                        recipes such as Honey Lavender, Burnt Caramel and Matcha Almond, which quickly became fan favourites and set the brand apart.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone4.png" alt="" class="milestone-image">
+                    <h3 class="title">2012- Local Partnerships</h3>
+                    <i class="description">Committed to using only the freshest ingredients, Cream&Craft established formal partnerships with local dairy farmers and fruit growers. These collaborations ensured
+                         sustainable sourcing, better product quality and stronger support for the local community.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone5.jpg" alt="" class="milestone-image">
+                    <h3 class="title">2017 – Expansion</h3>
+                    <i class="description">With its reputation growing across the region, the brand opened multiple new stores in nearby towns. Each outlet retained the same handcrafted preparation methods 
+                        and welcoming atmosphere, allowing more customers to experience Cream&Craft’s unique approach to ice cream.</i>
+                </li>
+                <li class="Milestone swiper-slide">
+                    <img src="Milestone6.jpg" alt="" class="milestone-image">
+                    <h3 class="title">2024 – Digital Transformation</h3>
+                    <i class="description">To serve a broader audience, Cream&Craft launched its own e-commerce platform and started nationwide delivery. Customers could now order their favourite flavours 
+                        online and enjoy handcrafted ice cream delivered directly to their homes, while still experiencing the same artisanal quality.</i>
+                </li>
             </ul>
 
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
+
         </div>
     </div>
+
+
   </section>
 </main>
 
+<!--Linking Swiper script-->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <script>
   const swiper = new Swiper('.swiper', {
     loop: true,
@@ -378,5 +457,6 @@
 <footer>
    <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
