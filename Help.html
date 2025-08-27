@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - Cream&Craft</title>
+  <title>FAQ - Cream&Craft</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -16,7 +17,7 @@
       --background-color: #fff0f8;
       --text-color: #333;
       --light-text: #fff;
-      --whiteColor:#f5f5f5;
+      --whiteColor: #f5f5f5;
       --shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
@@ -33,116 +34,119 @@
       line-height: 1.6;
     }
 
+    /* Header */
     header {
-      background-color: #f9c8e6; /* pink background */
-      padding: 10px 0;
+      background-color: var(--secondary-color);
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
     }
 
-    header .logo img {
-      width: 150px;
-      margin-left: 20px;
-    }
-
-  header nav h1 {
-      font-family:'DM Serif Display';
-      font-size: 50px;
-      text-align: center;
-      color: #6c8df0;
-      font-weight: bold;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      margin-top: -10px;
-    }
-
-  header nav ul {
-      list-style: none;
-      display: flex;
-      margin-right: 20px;
-    }
-
-    header nav ul li {
-      margin: 0 15px;
-  }
-
-  header nav ul li a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 20px;
-      transition: font-size 0.3s ease;
-  }
-
-  .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center; 
-      gap: 5px; 
-  }
-
-  .brand-name {
-      font-family: 'Dancing Script', cursive;
-      font-size: 28px;
-      font-weight: bold;
-      color: purple;
-  }
-
-
-    .faq-header {
-      background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('faqheader.png');
-      background-position: center;
-      background-repeat:no-repeat;
-      background-size: cover;
+    .logo {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 6% 3%;
-      border-radius: 30px;
+      gap: 5px;
+    }
+
+    .logo img {
+      width: 120px;
+    }
+
+    .brand-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 24px;
+      font-weight: bold;
+      color: purple;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    nav h1 {
+      font-size: 36px;
+      color: #6c8df0;
+      font-weight: bold;
+      text-align: center;
+      margin: 0 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* FAQ Header */
+    .faq-header {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('faqheader.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5% 3%;
+      border-radius: 20px;
       color: var(--light-text);
+      text-align: center;
     }
 
     .header-title {
-      font-size: 48px;
-      letter-spacing: 1.5px;
+      font-size: 40px;
       margin-bottom: 0.5rem;
     }
 
     .header-desc {
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-align: center;
+      font-size: 16px;
     }
 
     .search {
-      width: 60%;
-      height: 50px;
+      width: 80%;
+      max-width: 500px;
+      height: 45px;
       background-color: var(--whiteColor);
-      margin-top: 5%;
-      border-radius: 30px;
+      margin-top: 20px;
+      border-radius: 25px;
       display: flex;
-      justify-content: space-between;
-      padding: 5px;
+      overflow: hidden;
     }
 
     .search input {
-      width: 80%;
-      height: 100%;
-      padding: 1% 3%;
-      background: transparent;
+      flex: 1;
       border: none;
+      outline: none;
+      padding: 0 10px;
     }
 
     .search button {
-      width: 20%;
-      min-width: 100px;
-      height: 100%;
       background-color: var(--primary-color);
       color: var(--whiteColor);
       border: none;
-      border-radius: 30px;
+      padding: 0 20px;
       cursor: pointer;
       transition: 0.3s ease;
     }
@@ -151,31 +155,35 @@
       background-color: var(--text-color);
     }
 
+    /* FAQ Section */
     .faq {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
-      align-items: flex-start;
-      padding: 3%;
+      gap: 20px;
+      padding: 20px;
     }
 
-  
+    .faq-name {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
 
     .faq-img {
       width: 100%;
-      max-width: 400px;
+      max-width: 300px;
+      margin: 20px auto;
     }
 
     .faq-box {
-      flex: 1;
-      min-width: 320px;
-      padding: 2% 0 4% 4%;
+      flex: 2;
+      min-width: 300px;
+      padding: 10px 20px;
       border-left: 2px solid var(--primary-color);
     }
 
     .faq-wrapper {
-      width: 100%;
-      padding: 1.5rem 0;
+      padding: 1rem 0;
       border-bottom: 1px solid var(--text-color);
     }
 
@@ -183,11 +191,11 @@
       display: block;
       position: relative;
       width: 100%;
-      letter-spacing: 1.2px;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
       color: var(--primary-color);
       cursor: pointer;
+      padding-right: 20px;
     }
 
     .faq-title:after {
@@ -204,12 +212,10 @@
     }
 
     .faq-detail {
-      line-height: 1.5;
-      letter-spacing: 1px;
+      font-size: 14px;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-in-out;
-      font-size: 14px;
     }
 
     .faq-trigger {
@@ -224,39 +230,117 @@
       transform: rotate(-45deg);
     }
 
-    @media screen and (max-width:680px) {
-      .search { width: 100%; }
-      .faq-title { font-size: 20px; }
+    /* Scroll-to-top */
+    #scrollTopBtn {
+      display:none;
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      padding:10px 15px;
+      border:none;
+      border-radius:50%;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+      background-color:var(--primary-color);
+      color:var(--whiteColor);
+      cursor:pointer;
+      font-size:18px;
     }
 
     /* Footer */
-        footer {
-            background-color: var(--text-color);
-            color: var(--light-text);
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
+    footer {
+      background-color: var(--text-color);
+      color: var(--light-text);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
 
+    /* ===== Mobile & Tablet ===== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+      }
+
+      nav h1 {
+        font-size: 28px;
+        margin: 10px 0;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        background-color: var(--secondary-color);
+        border-radius: 10px;
+        padding: 10px 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .faq {
+        flex-direction: column;
+      }
+
+      .faq-box {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      .faq-title {
+        font-size: 18px;
+      }
+
+      .faq-header {
+        padding: 8% 5%;
+      }
+
+      .header-title {
+        font-size: 32px;
+      }
+
+      .header-desc {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 
 <body>
 <header>
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-        <span class="brand-name">Cream&Craft</span>
-    </div>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+    <span class="brand-name">Cream&Craft</span>
+  </div>
 
-    <nav>
-        <h1>Help</h1>
-        <ul>
-            <li><a href="main.html">Home</a></li>
-            <li><a href="ice-cream.html">Menu</a></li>
-            <li><a href="AboutUs.html">About Us</a></li>
-            <li><a href="contact_us.html">Contact Us</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <h1>Help</h1>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul id="nav-links">
+      <li><a href="main.html">Home</a></li>
+      <li><a href="ice-cream.html">Menu</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+  </nav>
 </header>
 
 <section class="faq-header">
@@ -270,17 +354,21 @@
 
 <section class="faq">
   <div class="faq-name">
-    <h1 class="faq-subheader">Have <br> Questions❓</h1> <br><br>
-    <img class="faq-img" src="faq-img.png"><br><br><br><br>
-    <img class="faq-img" src="faq-image2.png"><br><br><br><br>
+    <h1 class="faq-subheader">Have <br> Questions❓</h1>
+    <img class="faq-img" src="faq-img.png">
+    <img class="faq-img" src="faq-image2.png">
     <img class="faq-img" src="faq-images3.png">
-
   </div>
   <div class="faq-box">
     <div class="faq-wrapper">
       <input type="checkbox" class="faq-trigger" id="faq-trigger-1">
       <label class="faq-title" for="faq-trigger-1">Do you offer delivery 🚚?</label>
-      <div class="faq-detail"><p>Yes! We offer delivery within selected areas. Simply enter your delivery address at checkout and available delivery options will be shown.</p></div>
+      <div class="faq-detail"><p>Yes! We offer delivery within selected areas. Simply enter your address at checkout.</p></div>
+    </div>
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-2">
+      <label class="faq-title" for="faq-trigger-2">Do you offer cash-on-delivery 💵?</label>
+      <div class="faq-detail"><p>Currently we do not offer cash-on-delivery. All orders must be paid online during checkout.</p></div>
     </div>
     <div class="faq-wrapper">
       <input type="checkbox" class="faq-trigger" id="faq-trigger-2">
@@ -359,21 +447,16 @@
   </div>
 </section>
 
-<button
-  id="scrollTopBtn"
-  style="display:none;position:fixed;bottom:20px;right:20px;padding:10px 15px;border:none;border-radius:50%;box-shadow:0 4px 8px rgba(0,0,0,0.2);background-color:var(--primary-color);color:var(--whiteColor);cursor:pointer;font-size:18px;">
-▲
-</button>
+<button id="scrollTopBtn">▲</button>
 
 <footer>
-  <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
+  <p>&copy; 2025 Cream&Craft. All rights reserved.</p>
 </footer>
 
 <script>
-
-  // Live FAQ search (case-insensitive, matches title only)
+  // FAQ Search
   const searchInput = document.getElementById('faqSearch');
-  const faqItems   = document.querySelectorAll('.faq-wrapper');
+  const faqItems = document.querySelectorAll('.faq-wrapper');
 
   searchInput.addEventListener('input', (event) => {
     const query = event.target.value.toLowerCase();
@@ -382,7 +465,22 @@
       item.style.display = title.includes(query) ? 'block' : 'none';
     });
   });
-</script>
 
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    hamburger.textContent = navLinks.classList.contains('show') ? "✖" : "☰";
+  });
+
+  // Scroll-to-top
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.onscroll = () => {
+    scrollBtn.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
+  };
+  scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+</script>
 </body>
 </html>
