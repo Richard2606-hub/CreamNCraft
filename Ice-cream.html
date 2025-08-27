@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="ice-cream.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
-   <!--Search bar button-->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <!-- Search bar button -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
@@ -19,16 +19,14 @@
         <div class="logo">
             <img src="logo.png" alt="Cream & Craft Logo">
             <span class="brand-name">Cream&Craft</span>
-
         </div>
         <nav>
+            <h1>Our Delicious Ice-Creams</h1>
             <ul>
-                <h1>Our Delicious Ice-Creams</h1>
                 <li><a href="main.html">Home</a></li>
                 <li><a href="AboutUs.html">About Us</a></li>
                 <li><a href="contact_us.html">Contact Us</a></li>
                 <li><a href="Help.html">Help</a></li>
-
             </ul>
         </nav>
     </header>
@@ -38,27 +36,25 @@
         <h2>Artisanal flavors made with love</h2>
         <nav>
             <form id="searchForm">
-            <input id="search" type="search" placeholder="Search here" />
-            <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                <input id="search" type="search" placeholder="Search here" />
+                <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
             </form>
         </nav>
     </section>
 
     <!-- Product Grid -->
     <section class="product-grid">
-
         <div class="product-card">
             <a href="choco mate.html">
-            <img src="Chocolate ice-cream.jpeg" alt="Choco Malt ice-cream">
+                <img src="Chocolate ice-cream.jpeg" alt="Choco Malt ice-cream">
             </a>
             <h3>Choco Malt Ice-cream (473ml)</h3>
             <p>RM10</p>
-            
         </div>
 
         <div class="product-card">
             <a href="berries vanilla.html">
-            <img src="Berries vanilla.jpeg" alt="Berries Vanilla ice-cream">
+                <img src="Berries vanilla.jpeg" alt="Berries Vanilla ice-cream">
             </a>
             <h3>Berries Vanilla Ice-cream (473ml)</h3>
             <p>RM12</p>
@@ -66,7 +62,7 @@
 
         <div class="product-card">
             <a href="strawberry.html">
-            <img src="Strawberry ice-cream.jpeg" alt="Strawberry ice-cream">
+                <img src="Strawberry ice-cream.jpeg" alt="Strawberry ice-cream">
             </a>
             <h3>Strawberry Ice-cream (473ml)</h3>
             <p>RM10</p>
@@ -74,18 +70,17 @@
 
         <div class="product-card">
             <a href="caramel almond.html">
-            <img src="Caramel almond ice-cream.jpeg" alt="Caramel almond ice-cream">
+                <img src="Caramel almond ice-cream.jpeg" alt="Caramel almond ice-cream">
             </a>
             <h3>Caramel Almond Ice-cream (473ml)</h3>
             <p>RM15</p>
         </div>
-
-        
     </section>
+
     <section class="product-grid">
         <div class="product-card">
             <a href="matcha.html">
-            <img src="Matcha ice-cream.jpeg" alt="Matcha ice-cream">
+                <img src="Matcha ice-cream.jpeg" alt="Matcha ice-cream">
             </a>
             <h3>Matcha Ice-cream (473ml)</h3>
             <p>RM15</p>
@@ -93,7 +88,7 @@
 
         <div class="product-card">
             <a href="mint.html">
-            <img src="Mint ice-cream.jpeg" alt="Mint ice-cream">
+                <img src="Mint ice-cream.jpeg" alt="Mint ice-cream">
             </a>
             <h3>Mint Ice-cream (473ml)</h3>
             <p>RM12</p>
@@ -101,7 +96,7 @@
 
         <div class="product-card">
             <a href="oreo.html">
-            <img src="Oreo ice-cream.jpeg" alt="Oreo ice-cream">
+                <img src="Oreo ice-cream.jpeg" alt="Oreo ice-cream">
             </a>
             <h3>Oreo Ice-cream (473ml)</h3>
             <p>RM15</p>
@@ -109,16 +104,16 @@
 
         <div class="product-card">
             <a href="cookies&cream.html">
-            <img src="Cookie&Cream ice-cream.jpeg" alt="Cookie&Cream ice-cream">
-             </a>
+                <img src="Cookie&Cream ice-cream.jpeg" alt="Cookie&Cream ice-cream">
+            </a>
             <h3>Cookie&cream Ice-cream (473ml)</h3>
             <p>RM15</p>
         </div>
-
     </section>
 
     <p id="noResults" style="display:none; text-align:center; font-weight:bold; margin-top:20px;">
-  🚫 Sorry, no products found.</p>
+        🚫 Sorry, no products found.
+    </p>
 
     <script>
         const searchInput = document.getElementById('search');
@@ -127,46 +122,38 @@
         const noResults = document.getElementById('noResults');
 
         function filterProducts() {
-        const searchTerm = searchInput.value.toLowerCase();
-        let found = false;
+            const searchTerm = searchInput.value.toLowerCase();
+            let found = false;
 
-        productCards.forEach(card => {
-            const name = card.querySelector('h3')?.textContent.toLowerCase() || "";
-            const img = card.querySelector('img');
-            const description = (img.alt?.toLowerCase() || "") + " " + (img.dataset.description?.toLowerCase() || "");
+            productCards.forEach(card => {
+                const name = card.querySelector('h3')?.textContent.toLowerCase() || "";
+                const img = card.querySelector('img');
+                const description = (img.alt?.toLowerCase() || "") + " " + (img.dataset.description?.toLowerCase() || "");
 
-            const matches = name.includes(searchTerm) || description.includes(searchTerm);
+                const matches = name.includes(searchTerm) || description.includes(searchTerm);
 
-            if (matches && searchTerm !== "") {
-            card.style.display = 'block';
-            found = true;
-            } else if (!matches && searchTerm !== "") {
-            card.style.display = 'none';
-            } else {
-            // if search is empty, reset
-            card.style.display = 'block';
-            found = true; // reset to true so message doesn’t show
-            }
-        });
+                if (matches && searchTerm !== "") {
+                    card.style.display = 'block';
+                    found = true;
+                } else if (!matches && searchTerm !== "") {
+                    card.style.display = 'none';
+                } else {
+                    card.style.display = 'block'; // reset when search empty
+                    found = true;
+                }
+            });
 
-        // show/hide "not found" message
-        if (!found && searchTerm !== "") {
-            noResults.style.display = 'block';
-        } else {
-            noResults.style.display = 'none';
-        }
+            noResults.style.display = (!found && searchTerm !== "") ? 'block' : 'none';
         }
 
-        // Run on submit
         searchForm.addEventListener('submit', (event) => {
-        event.preventDefault(); 
-        filterProducts();
+            event.preventDefault();
+            filterProducts();
         });
 
-        // Run live while typing
         searchInput.addEventListener('input', filterProducts);
     </script>
-    
+
     <footer>
         <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
     </footer>
