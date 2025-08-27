@@ -25,10 +25,17 @@ header .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-direction: column; /* stack vertically */
+    justify-content: center;
+    margin-right: 20px;    /* spacing from nav */
 }
 
 header .logo img {
     width: 120px;
+  max-width: 80px;   /* control logo size */
+  height: auto;
+  display: block;
+  margin-bottom: 5px; /* space between logo and text */
 }
 
 .brand-name {
@@ -36,7 +43,9 @@ header .logo img {
     font-size: 28px;
     font-weight: bold;
     color: purple;
+    margin-left: 0px;
 }
+
 
 header nav h1 {
     font-family: 'DM Serif Display', serif;
@@ -204,3 +213,4 @@ footer {
         font-size: 20px;
     }
 }
+
