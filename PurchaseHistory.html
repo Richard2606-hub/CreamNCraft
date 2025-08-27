@@ -127,30 +127,17 @@
     /* Responsive */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
+    grid-template-columns: 1fr 1fr; /* logo | nav */
+    grid-template-rows: auto auto;  /* add a second row */
   }
 
   .header-title {
-    position: static;   /* remove absolute */
-    transform: none;    /* reset */
-    margin: 10px 0;     /* spacing */
+    grid-column: 1 / -1;  /* span across full width */
     text-align: center;
-    font-size: 28px;    /* smaller font */
-  }
-
-  header nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
+    font-size: 20px;
     margin-top: 10px;
   }
-
-  header nav ul li {
-    margin: 5px 8px;
-  }
 }
-
 
 </style>
 </head>
