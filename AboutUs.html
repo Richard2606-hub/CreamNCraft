@@ -84,7 +84,6 @@
           gap: 5px; 
         }
 
-
         .brand-name{
           font-family:'Dancing Script',cursive;
           font-size:28px;
@@ -92,7 +91,6 @@
           color:purple;
         }
 
-       
         /* Banner */
         .hero-banner {
             width: 100%;
@@ -245,7 +243,6 @@
             font-size: var(--font-size-m);
         }
 
-
         /* Footer */
         footer {
             background-color: var(--text-color);
@@ -254,10 +251,53 @@
             padding: 2rem;
             margin-top: 3rem;
         }
+
+        /* ✅ Responsive fixes */
+        @media (max-width: 992px) {
+          header nav h1 {
+            font-size: 2rem; /* smaller title on tablets */
+          }
+
+          header nav ul {
+            flex-wrap: wrap; /* let menu items wrap on smaller screens */
+            justify-content: center;
+          }
+
+          header nav ul li a {
+            font-size: 16px; /* smaller text */
+          }
+
+          .banner-title {
+            font-size: 2.5rem; /* smaller banner heading */
+          }
+
+          .banner-subtitle {
+            font-size: 1rem;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .about-content {
+            flex-direction: column; /* stack image + text on phone */
+            text-align: center;
+          }
+
+          .about-text h3 {
+            font-size: 1.8rem;
+          }
+
+          .about-text p {
+            font-size: 1rem;
+          }
+
+          .icons-row {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
     </style>
 </head>
 <body>
-
 
 <header>
     <div class="logo">
@@ -378,8 +418,6 @@
 
         </div>
     </div>
-
-
   </section>
 </main>
 
@@ -406,4 +444,3 @@
 
 </body>
 </html>
-
