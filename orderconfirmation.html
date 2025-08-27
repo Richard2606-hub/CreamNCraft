@@ -168,6 +168,62 @@ footer {
     
 }
 
+/* Responsive design */
+
+/* Mobile (max 600px) */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-title {
+    position: static;
+    transform: none;
+    margin: 10px 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  header nav ul li {
+    margin: 10px 0;
+  }
+
+  .confirmation-box {
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+  }
+}
+
+/* Tablet (601px–900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .header-title {
+    font-size: 36px;
+  }
+
+  .confirmation-box {
+    width: 70%;
+    margin: 60px auto;
+  }
+}
+
+/* Laptop/Desktop (901px and above) */
+@media (min-width: 901px) {
+  .header-title {
+    font-size: 50px;
+  }
+
+  .confirmation-box {
+    width: 50%;
+  }
+}
+
 
 </style>
 </head>
@@ -246,3 +302,4 @@ footer {
 
 </body>
 </html>
+
