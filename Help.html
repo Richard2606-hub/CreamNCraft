@@ -28,7 +28,6 @@
       background-color: var(--background-color);
       color: var(--text-color);
       line-height: 1.6;
-      padding-top: 80px; /* leave space for fixed title */
     }
 
     /* ✅ Header */
@@ -47,6 +46,7 @@
       flex-direction: column;
       align-items: center; 
       gap: 5px;
+      z-index: 1;
     }
 
     .logo img { width: 120px; }
@@ -57,12 +57,27 @@
       color: purple;
     }
 
+    nav h1 {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'DM Serif Display';
+      font-size: 36px;
+      font-weight: bold;
+      color: #6c8df0;
+      text-align: center;
+      margin: 0;
+      z-index: 2;
+    }
+
     nav {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 20px;
       width: 100%;
+      margin-top: 60px; /* space for title above nav items */
     }
 
     nav ul {
@@ -87,24 +102,6 @@
       background: none;
       border: none;
       cursor: pointer;
-    }
-
-    /* ✅ Fixed Help Title */
-    nav h1 {
-      position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'DM Serif Display';
-      font-size: 36px;
-      font-weight: bold;
-      color: #6c8df0;
-      text-align: center;
-      z-index: 999;
-      background-color: var(--secondary-color);
-      padding: 5px 20px;
-      border-radius: 10px;
-      box-shadow: var(--shadow);
     }
 
     @media (max-width: 768px) {
@@ -272,7 +269,13 @@
     <img class="faq-img" src="faq-images3.png" alt="FAQ Image 3">
   </div>
   <div class="faq-box">
-    <!-- FAQ items here (unchanged) -->
+    <!-- All your FAQ items here (unchanged) -->
+    <div class="faq-wrapper">
+      <input type="checkbox" class="faq-trigger" id="faq-trigger-1">
+      <label class="faq-title" for="faq-trigger-1">Do you offer delivery 🚚?</label>
+      <div class="faq-detail"><p>Yes! We offer delivery within selected areas. Simply enter your address at checkout.</p></div>
+    </div>
+    <!-- repeat other FAQ items as in your original code -->
   </div>
 </section>
 
