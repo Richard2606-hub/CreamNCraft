@@ -261,25 +261,70 @@
       .faq-title { font-size: 18px; }
       .search { width: 100%; }
     }
+    /* ✅ Default nav styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* ✅ Hamburger hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* ✅ Mobile styles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    background: var(--secondary-color);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  nav ul.show {
+    display: flex; /* shown when toggled */
+  }
+
+  .hamburger {
+    display: block; /* show hamburger on mobile */
+  }
+
+  nav h1 {
+    font-size: 24px;
+  }
+}
+
   </style>
 </head>
 
 <body>
 <header>
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-        <span class="brand-name">Cream&Craft</span>
-    </div>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+    <span class="brand-name">Cream&Craft</span>
+  </div>
 
-    <nav>
-        <h1>Help</h1>
-        <ul>
-            <li><a href="main.html">Home</a></li>
-            <li><a href="Ice-cream.html">Menu</a></li>
-            <li><a href="AboutUs.html">About Us</a></li>
-            <li><a href="contact_us.html">Contact Us</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <h1>Help</h1>
+    <!-- ✅ Hamburger Icon -->
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul id="nav-links">
+      <li><a href="main.html">Home</a></li>
+      <li><a href="Ice-cream.html">Menu</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+  </nav>
 </header>
 
 <section class="faq-header">
@@ -407,9 +452,16 @@
       item.style.display = title.includes(query) ? 'block' : 'none';
     });
   });
-</script>
+  
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
 
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
 </body>
 </html>
+
 
 
