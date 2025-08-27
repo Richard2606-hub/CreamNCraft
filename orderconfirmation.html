@@ -13,16 +13,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
 </head>
 <style>
-    /* Header */
-    /* Header */
-header {
+/* ===== Body ===== */
+body {
+  font-family: 'Times New Roman', Times, serif;
   background-color: #fff0f8;
-  padding: 10px 20px;
-  width: 100%;
   margin: 0;
+  padding: 0;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #f9c8e6;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* logo | title | nav */
   align-items: center;
-  justify-content: space-between; /* logo left, nav right */
 }
 
 .logo {
@@ -30,6 +38,18 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  justify-self: start;
+}
+
+.logo img {
+  width: 120px;
+}
+
+.brand-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  font-weight: bold;
+  color: purple;
 }
 
 .header-title {
@@ -37,8 +57,13 @@ header {
   font-size: 32px;
   color: #6c8df0;
   font-weight: bold;
-  margin: 0 auto;   /* keeps it centered */
+  margin: 0;
+  justify-self: center;
   text-align: center;
+}
+
+header nav {
+  justify-self: end;
 }
 
 header nav ul {
@@ -60,84 +85,75 @@ header nav ul li a {
   transition: font-size 0.3s ease;
 }
 
-    /* Confirmation box */
-    .confirmation-box {
-    background: white;
-    border-radius: 8px;
-    padding: 30px;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    width: 50%;
-    margin: 100px auto 0 auto; /* shorthand for margin-top: 100px; centered horizontally */
+/* ===== Confirmation Box ===== */
+main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;   /* align at top */
+  justify-content: center;   /* center horizontally */
+  padding-top: 40px;         /* add gap below header */
+}
+
+.confirmation-box {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 50%;
+  margin: 40px auto 0 auto;   /* ⬅ pushes box down from header */
 }
 
 
-    .confirmation-box h1 {
-        color: #f56087;
-        font-size: 24px;
-    }
-
-    .confirmation-box p {
-        color: #555;
-        margin: 10px 0;
-    }
-
-    .order-details {
-        margin: 20px 0;
-        background: #f5f5f5;
-        padding: 10px;
-        border-radius: 6px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .btn {
-        background: #28a745;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 6px;
-        display: inline-block;
-        margin-top: 10px;
-    }
-
-    .btn:hover {
-        background: #218838;
-    }
-
-    .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 5px; 
+.confirmation-box h1 {
+  color: #f56087;
+  font-size: 24px;
 }
 
-.brand-name {
-    font-family: 'Dancing Script', cursive; /* or any font you want */
-    font-size: 28px; /* adjust size here */
-    font-weight: bold;
-    color: purple;
+.confirmation-box p {
+  color: #555;
+  margin: 10px 0;
 }
 
-/* Footer */
+.order-details {
+  margin: 20px 0;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn {
+  background: #28a745;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #218838;
+}
+
+/* ===== Footer ===== */
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;
 }
 
-/* Responsive design */
-
+/* ===== Responsive Design ===== */
 /* Tablet */
 @media (max-width: 1024px) {
   .header-title {
     font-size: 26px;
   }
-
   header nav ul li a {
     font-size: 16px;
   }
@@ -150,7 +166,7 @@ footer {
   }
 
   header nav ul {
-    flex-wrap: wrap;   /* allow nav links to wrap to next line */
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -169,6 +185,7 @@ footer {
     font-size: 14px;
   }
 }
+
 </style>
 </head>
 <body>
@@ -248,6 +265,5 @@ footer {
 
 </body>
 </html>
-
 
 
