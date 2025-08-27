@@ -127,18 +127,31 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-  .history-box {
-    width: 95%;
+  header {
+    flex-direction: column;
+    align-items: center;
     padding: 15px;
   }
-  .history-box h1 {
-    font-size: 22px;
-  }
+
   .header-title {
-    font-size: 26px;  /* smaller title on mobile */
-    top: 55px;        /* optional: move it down slightly if needed */
+    position: static;
+    transform: none;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 28px; /* smaller font on mobile */
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  header nav ul li {
+    margin: 5px 8px;
   }
 }
+
 </style>
 </head>
 <body>
@@ -199,5 +212,3 @@
 
 </body>
 </html>
-
-
