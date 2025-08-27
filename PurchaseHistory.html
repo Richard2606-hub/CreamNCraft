@@ -18,73 +18,79 @@
     }
 
     /* Header */
-    header {
-      background-color: #f9c8e6;
-      padding: 0;
-      width: 100%;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    /* Header */
+header {
+  background-color: #f9c8e6;
+  padding: 10px 20px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;  /* allow wrapping on smaller screens */
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
 
-    .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-      margin-left: 20px;
-    }
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
 
-    .logo img {
-      width: 150px;
-      height: auto;
-    }
+.logo img {
+  width: 120px;
+  height: auto;
+}
 
-    .brand-name {
-      font-family: 'Dancing Script', cursive;
-      font-size: 28px;
-      font-weight: bold;
-      color: purple;
-    }
+.brand-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  font-weight: bold;
+  color: purple;
+}
 
-    .header-title {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'DM Serif Display', serif;
-      font-size: 50px;
-      color: #6c8df0;
-      font-weight: bold;
-    }
+.header-title {
+  flex: 1 1 100%;   /* full width on small screens */
+  font-family: 'DM Serif Display', serif;
+  font-size: 40px;
+  color: #6c8df0;
+  font-weight: bold;
+  margin: 10px 0;
+}
 
-    header nav ul {
-      list-style: none;
-      display: flex;
-      margin-right: 20px;
-    }
+/* Nav */
+header nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 10px 0;
+  justify-content: center;
+}
 
-    header nav ul li {
-      margin: 0 15px;
-    }
+header nav ul li {
+  margin: 0 10px;
+}
 
-    header nav ul li a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 20px;
-      transition: font-size 0.3s ease;
-    }
+header nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: font-size 0.3s ease;
+}
 
-    /* History Box */
-    .history-box {
-      background: white;
-      border-radius: 8px;
-      padding: 30px;
-      max-width: 600px;
-      margin: 100px auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+/* History Box */
+.history-box {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 
     .history-box h1 {
       text-align: center;
@@ -114,58 +120,25 @@
     }
 
     /* Responsive Design */
-
-/* Tablet (max-width: 1024px) */
+/* Tablet */
 @media (max-width: 1024px) {
   .header-title {
-    font-size: 36px;
-    position: static;
-    transform: none;
-    text-align: center;
-    margin: 10px 0;
+    font-size: 32px;
   }
 
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-
-  header nav ul {
-    margin: 10px 0;
-  }
-
-  .history-box {
-    max-width: 90%;
-    margin: 50px auto;
-    padding: 20px;
-  }
-}
-
-/* Mobile (max-width: 768px) */
-@media (max-width: 768px) {
   .logo img {
     width: 100px;
   }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 26px;
+  }
 
   .brand-name {
-    font-size: 20px;
-  }
-
-  .header-title {
-    font-size: 28px;
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-
-  header nav ul li {
-    margin: 8px 0;
+    font-size: 18px;
   }
 
   header nav ul li a {
@@ -174,24 +147,15 @@
 
   .history-box {
     width: 95%;
-    margin: 30px auto;
+    margin: 20px auto;
     padding: 15px;
-  }
-
-  .order-entry {
-    font-size: 13px;
-    padding: 10px;
   }
 }
 
-/* Extra small devices (max-width: 480px) */
+/* Extra small phones */
 @media (max-width: 480px) {
   .header-title {
-    font-size: 22px;
-  }
-
-  .brand-name {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   header nav ul li a {
@@ -202,6 +166,7 @@
     padding: 10px;
   }
 }
+
 
   </style>
 </head>
