@@ -112,6 +112,97 @@
       padding: 2rem;
       margin-top: 3rem;
     }
+
+    /* Responsive Design */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .header-title {
+    font-size: 36px;
+    position: static;
+    transform: none;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  header nav ul {
+    margin: 10px 0;
+  }
+
+  .history-box {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .logo img {
+    width: 100px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+
+  .header-title {
+    font-size: 28px;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  header nav ul li {
+    margin: 8px 0;
+  }
+
+  header nav ul li a {
+    font-size: 16px;
+  }
+
+  .history-box {
+    width: 95%;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .order-entry {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 22px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  header nav ul li a {
+    font-size: 14px;
+  }
+
+  .history-box {
+    padding: 10px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -144,18 +235,8 @@
     <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
   </footer>
 
-<script>
-  // Get the logged-in username (this should be set when the user logs in)
-  let username = localStorage.getItem("username");  
-
-  if (!username) {
-    // If no one is logged in, redirect to login page (optional)
-    document.getElementById("history").innerHTML = "<p>Please log in to see your orders.</p>";
-  } else {
-    let historyKey = "purchaseHistory_" + username;
-
-    // Retrieve only this user's purchase history
-    let history = JSON.parse(localStorage.getItem(historyKey)) || [];
+  <script>
+    let history = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
     let historyContainer = document.getElementById("history");
 
     if (history.length === 0) {
@@ -165,20 +246,18 @@
         let div = document.createElement("div");
         div.classList.add("order-entry");
         div.innerHTML =
-          "<strong>Order #" + (index + 1) + "</strong><br>" +
-          "<strong>Name:</strong> " + order.firstName + " " + order.lastName + "<br>" +
-          "<strong>Address:</strong> " + order.address + "<br>" +
-          "<strong>Total:</strong> RM" + order.total.toFixed(2) + "<br><br>" +
-          "<strong>Items:</strong><br>" + order.cart.map(function(item) {
-            return item.name + " (x" + item.quantity + ") - RM" + (item.price * item.quantity).toFixed(2);
-          }).join("<br>");
+            "<strong>Order #" + (index + 1) + "</strong><br>" +
+            "<strong>Name:</strong> " + order.firstName + " " + order.lastName + "<br>" +
+            "<strong>Address:</strong> " + order.address + "<br>" +
+            "<strong>Total:</strong> RM" + order.total.toFixed(2) + "<br><br>" +
+             "<strong>Items:</strong><br>" + order.cart.map(function(item) {
+    return item.name + " (x" + item.quantity + ") - RM" + (item.price * item.quantity).toFixed(2);
+  }).join("<br>");
 
         historyContainer.appendChild(div);
       });
     }
-  }
-</script>
-
+  </script>
 
 </body>
 </html>
