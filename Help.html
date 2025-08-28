@@ -438,8 +438,16 @@ nav h1 {
       scrollBtn.style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
     };
     scrollBtn.onclick = () => window.scrollTo({ top:0, behavior:'smooth' });
+  
+  const homeLink = document.querySelector("nav ul li:first-child a");
+  if (localStorage.getItem("signedIn") === "true") {
+      homeLink.href = "main.html"; // after login homepage
+  } else {
+      homeLink.href = "index.html"; // before login homepage
+  }
   </script>
 </body>
 </html>
+
 
 
