@@ -140,14 +140,19 @@ header nav ul li a {
     background-color: #fb4566;
 }
 
-/* Footer Styles */
 footer {
-    position: relative;
-    background-color:#f8d2ed;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
+    background-color: #f56087; /* deeper pink */
+    color: #fff;               /* white text for better contrast */
+    padding: 30px 0;           /* more vertical space */
+    text-align: center;        /* center everything */
+    font-size: 16px;
     font-family:'DM Serif Diaplay';
+    width: 100%;
+}
+
+footer .footer-content {
+    max-width: 900px;          /* keeps content neat */
+    margin: 0 auto;
 }
 
 /* ---------------- RESPONSIVE DESIGN ---------------- */
@@ -238,3 +243,4 @@ footer {
         width: 100%;
     }
 }
+
