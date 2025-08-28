@@ -155,7 +155,7 @@
     <ul>
       <li><a href="main.html">Home</a></li>
       <li><a href="AboutUs.html">About Us</a></li>
-      <li><a href="Ice-cream.html">Ice-Cream</a></li>
+      <li><a href="Ice-cream.html">Menu</a></li>
       <li><a href="shoppingcart.html">Cart</a></li>
     </ul>
   </nav>
@@ -172,37 +172,41 @@
   <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
 </footer>
 <script>
-  // Get logged-in username
-  let username = localStorage.getItem("username");
+  // Get the logged-in username (this should be set when the user logs in)
+  let username = localStorage.getItem("username");  
 
-  // Get all orders (assume checkout page pushed orders here temporarily)
-  let orders = JSON.parse(localStorage.getItem("orders")) || [];
-
-  // Get the latest order
-  let latestOrder = orders[orders.length - 1];
-
-  if (latestOrder && username) {
-    let fullName = latestOrder.firstName + " " + latestOrder.lastName;
-
-    let itemsHtml = latestOrder.cart.map(item =>
-      item.name + " (x" + item.quantity + ") - RM" + (item.price * item.quantity).toFixed(2)
-    ).join("<br>");
-
-    // Display on confirmation page
-    document.querySelector(".order-details").innerHTML =
-      "<strong>Name:</strong> " + fullName + "<br>" +
-      "<strong>Address:</strong> " + latestOrder.address + "<br>" +
-      "<strong>Total:</strong> RM" + latestOrder.total.toFixed(2) + "<br><br>" +
-      "<strong>Items:</strong><br>" + itemsHtml;
-
-    // Save order into purchase history for this user
+  if (!username) {
+    // If no one is logged in, redirect to login page (optional)
+    document.getElementById("history").innerHTML = "<p>Please log in to see your orders.</p>";
+  } else {
     let historyKey = "purchaseHistory_" + username;
+
+    // Retrieve only this user's purchase history
     let history = JSON.parse(localStorage.getItem(historyKey)) || [];
-    history.push(latestOrder);
-    localStorage.setItem(historyKey, JSON.stringify(history));
+    let historyContainer = document.getElementById("history");
+
+    if (history.length === 0) {
+      historyContainer.innerHTML = "<p>No past purchases found.</p>";
+    } else {
+      history.forEach((order, index) => {
+        let div = document.createElement("div");
+        div.classList.add("order-entry");
+        div.innerHTML =
+          "<strong>Order #" + (index + 1) + "</strong><br>" +
+          "<strong>Name:</strong> " + order.firstName + " " + order.lastName + "<br>" +
+          "<strong>Address:</strong> " + order.address + "<br>" +
+          "<strong>Total:</strong> RM" + order.total.toFixed(2) + "<br><br>" +
+          "<strong>Items:</strong><br>" + order.cart.map(function(item) {
+            return item.name + " (x" + item.quantity + ") - RM" + (item.price * item.quantity).toFixed(2);
+          }).join("<br>");
+
+        historyContainer.appendChild(div);
+      });
+    }
   }
 </script>
 </body>
 </html>
+
 
 
