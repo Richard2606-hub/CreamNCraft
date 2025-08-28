@@ -235,36 +235,43 @@ footer {
 </div>
 </main>
 <script>
-  // Get all orders
-let orders = JSON.parse(localStorage.getItem("orders")) || [];
+  // Get logged in username
+  let username = localStorage.getItem("username");
 
-// Get the latest order (the one just placed)
-let latestOrder = orders[orders.length - 1];
+  if (username) {
+    let historyKey = "purchaseHistory_" + username;
+    let history = JSON.parse(localStorage.getItem(historyKey)) || [];
 
-  if (latestOrder) {
-  let fullName = latestOrder.firstName + " " + latestOrder.lastName;
+    // Get the most recent order
+    let latestOrder = history[history.length - 1];
 
-  let itemsHtml = latestOrder.cart.map(item =>
-    item.name + " (x" + item.quantity + ") - RM" + (item.price * item.quantity).toFixed(2)
-  ).join("<br>");
+    if (latestOrder) {
+      let fullName = latestOrder.firstName + " " + latestOrder.lastName;
 
-  document.querySelector(".order-details").innerHTML =
-  "<div class='row'><strong>Name:</strong> " + fullName + "</div>" +
-  "<div class='row'><strong>Address:</strong> " + latestOrder.address + "</div>" +
-  "<div class='row'><strong>Total:</strong> RM" + latestOrder.total.toFixed(2) + "</div>" +
-  "<br><strong>Items:</strong><br>" + itemsHtml;
+      let itemsHtml = latestOrder.cart.map(item =>
+        item.name + " (x" + item.quantity + ") - RM" + (item.price * item.quantity).toFixed(2)
+      ).join("<br>");
 
-    let history = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
-    history.push(latestOrder);
-    localStorage.setItem("purchaseHistory", JSON.stringify(history));
+      // Update order details box
+      document.querySelector(".order-details").innerHTML =
+        "<div><strong>Name:</strong> " + fullName + "</div>" +
+        "<div><strong>Address:</strong> " + latestOrder.address + "</div>" +
+        "<div><strong>Total:</strong> RM" + latestOrder.total.toFixed(2) + "</div>" +
+        "<div><strong>Date:</strong> " + new Date(latestOrder.date).toLocaleString() + "</div>" +
+        "<br><strong>Items:</strong><br>" + itemsHtml;
+    }
+  } else {
+    // If no username, show a message
+    document.querySelector(".order-details").innerHTML = "<p>Please log in to see your order.</p>";
   }
-
 </script>
+
     <footer>
         <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
+
 
 
