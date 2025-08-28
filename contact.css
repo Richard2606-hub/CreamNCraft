@@ -248,6 +248,32 @@ footer .footer-content {
     }
 }
 
+.btn-group {
+    display: flex;
+    gap: 15px;  /* space between buttons */
+    flex-wrap: wrap; /* allow wrapping if too narrow */
+    justify-content: center;
+}
+
+.btn-group button {
+    flex: 1; /* buttons resize evenly */
+    min-width: 120px; /* prevents buttons from shrinking too small */
+}
+
+/* On very small screens, add extra vertical spacing */
+@media (max-width: 480px) {
+    .btn-group {
+        flex-direction: column; /* stack buttons vertically */
+        gap: 10px; /* vertical gap */
+    }
+
+    .btn-group button {
+        width: 100%; /* full width for easy tapping */
+    }
+}
+
+
+
 
 
 
