@@ -93,8 +93,16 @@
         window.location.href = "main.html"; // replace with your main menu page
     }
 
+     const homeLink = document.querySelector("nav ul li:first-child a");
+  if (localStorage.getItem("signedIn") === "true") {
+      homeLink.href = "main.html"; // after login homepage
+  } else {
+      homeLink.href = "index.html"; // before login homepage
+  }
+  </
 
 </script>
+
 
 
 
