@@ -171,32 +171,38 @@
 <footer>
   <p>&copy; 2023 Cream&Craft. All rights reserved.</p>
 </footer>
-
 <script>
-  let history = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
-  let historyContainer = document.getElementById("history");
+  // Get logged-in username
+  let username = localStorage.getItem("username");
 
-  if (history.length === 0) {
-    historyContainer.innerHTML = "<p>No past purchases found.</p>";
-  } else {
-    history.forEach((order, index) => {
-      let div = document.createElement("div");
-      div.classList.add("order-entry");
-      div.innerHTML =
-        "<strong>Order #" + (index + 1) + "</strong><br>" +
-        "<strong>Name:</strong> " + order.firstName + " " + order.lastName + "<br>" +
-        "<strong>Address:</strong> " + order.address + "<br>" +
-        "<strong>Total:</strong> RM" + order.total.toFixed(2) + "<br><br>" +
-        "<strong>Items:</strong><br>" +
-        order.cart.map(item =>
-          item.name + " (x" + item.quantity + ") - RM" + (item.price * item.quantity).toFixed(2)
-        ).join("<br>");
+  // Get all orders (assume checkout page pushed orders here temporarily)
+  let orders = JSON.parse(localStorage.getItem("orders")) || [];
 
-      historyContainer.appendChild(div);
-    });
+  // Get the latest order
+  let latestOrder = orders[orders.length - 1];
+
+  if (latestOrder && username) {
+    let fullName = latestOrder.firstName + " " + latestOrder.lastName;
+
+    let itemsHtml = latestOrder.cart.map(item =>
+      item.name + " (x" + item.quantity + ") - RM" + (item.price * item.quantity).toFixed(2)
+    ).join("<br>");
+
+    // Display on confirmation page
+    document.querySelector(".order-details").innerHTML =
+      "<strong>Name:</strong> " + fullName + "<br>" +
+      "<strong>Address:</strong> " + latestOrder.address + "<br>" +
+      "<strong>Total:</strong> RM" + latestOrder.total.toFixed(2) + "<br><br>" +
+      "<strong>Items:</strong><br>" + itemsHtml;
+
+    // Save order into purchase history for this user
+    let historyKey = "purchaseHistory_" + username;
+    let history = JSON.parse(localStorage.getItem(historyKey)) || [];
+    history.push(latestOrder);
+    localStorage.setItem(historyKey, JSON.stringify(history));
   }
 </script>
-
 </body>
 </html>
+
 
