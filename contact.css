@@ -159,6 +159,14 @@ footer .footer-content {
     margin: 0 auto;
 }
 
+footer.footer-content h2{
+    font-family:'DM Serif Diaplay';
+}
+
+footer.footer-content p{
+    font-family:'DM Serif Diaplay';
+}
+
 /* ---------------- RESPONSIVE DESIGN ---------------- */
 @media (max-width: 1024px) {
     header nav h1 {
@@ -275,6 +283,7 @@ footer .footer-content {
         width: 100%; /* full width for easy tapping */
     }
 }
+
 
 
 
