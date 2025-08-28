@@ -142,16 +142,20 @@ header nav ul li a {
 
 footer {
     background-color: #f8d2ed; /* lighter pink */
-    color: #000;              /* black text */
-    padding: 30px 0;          /* nice spacing */
-    text-align: center;       /* center the text */
+    color: #000;               /* black text */
+    padding: 30px 0;
+    text-align: center;
     font-size: 16px;
     font-family:'DM Serif Diaplay';
     width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
 }
 
+/* Make sure footer content fills width */
 footer .footer-content {
-    max-width: 900px; 
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -243,6 +247,7 @@ footer .footer-content {
         width: 100%;
     }
 }
+
 
 
 
