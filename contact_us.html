@@ -52,36 +52,6 @@
                 </div>
             </form>
 
-
-            <script>
-                document.getElementById("myBtnEventListener").addEventListener("click",submit);
-
-                function submit(){
-                    event.preventDefault();
-
-                    const name = document.querySelector('#name').value;
-                    const email = document.querySelector('#email').value;
-                    const message = document.querySelector('#message').value;
-
-                    if (!name || !email || !message) {
-                        event.preventDefault(); // Prevent form submission
-                        alert('Please fill out all fields.');
-                    }
-                    alert("Thank you! Your message has been submitted.");
-                    document.getElementById("form").reset();
-
-                    document.getElementById("myBtnEventListener").removeEventListener("click",submit);
-
-                }
-
-                // Handle return to main menu
-                function returnToMenu() {
-                    window.location.href = "main.html"; // replace with your main menu page
-                }
-
-
-        </script>
-
         </section>
     </main>
 
@@ -94,8 +64,39 @@
                 <p>Address: 215 Jalan Pantai, George Town, Penang, Malaysia</p>
             </div>
     </footer>
-
 </body>
 </html>
+
+<script>
+    document.getElementById("myBtnEventListener").addEventListener("click",submit);
+
+    function submit(){
+        event.preventDefault();
+
+        const name = document.querySelector('#name').value;
+        const email = document.querySelector('#email').value;
+        const message = document.querySelector('#message').value;
+
+        if (!name || !email || !message) {
+            event.preventDefault(); // Prevent form submission
+            alert('Please fill out all fields.');
+        }
+        alert("Thank you! Your message has been submitted.");
+        document.getElementById("form").reset();
+
+        document.getElementById("myBtnEventListener").removeEventListener("click",submit);
+
+    }
+
+    // Handle return to main menu
+    function returnToMenu() {
+        window.location.href = "main.html"; // replace with your main menu page
+    }
+
+
+</script>
+
+
+
 
 
