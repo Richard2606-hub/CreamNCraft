@@ -141,17 +141,17 @@ header nav ul li a {
 }
 
 footer {
-    background-color: #f8d2ed; 
-    color: #333;               
-    padding: 30px 0;          
-    text-align: center;       
+    background-color: #f8d2ed; /* lighter pink */
+    color: #000;              /* black text */
+    padding: 30px 0;          /* nice spacing */
+    text-align: center;       /* center the text */
     font-size: 16px;
     font-family:'DM Serif Diaplay';
     width: 100%;
 }
 
 footer .footer-content {
-    max-width: 900px;          /* keeps content neat */
+    max-width: 900px; 
     margin: 0 auto;
 }
 
@@ -243,6 +243,7 @@ footer .footer-content {
         width: 100%;
     }
 }
+
 
 
 
