@@ -452,6 +452,14 @@
       prevEl: '.swiper-button-prev',
     },
   });
+
+     const homeLink = document.querySelector("nav ul li:first-child a");
+  if (localStorage.getItem("signedIn") === "true") {
+      homeLink.href = "main.html"; // after login homepage
+  } else {
+      homeLink.href = "index.html"; // before login homepage
+  }
+  </
 </script>
 
 <footer>
@@ -460,4 +468,5 @@
 
 </body>
 </html>
+
 
