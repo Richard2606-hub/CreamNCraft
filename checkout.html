@@ -17,42 +17,53 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <style>
-
   * { 
-  margin:0; 
-  padding:0; 
-  box-sizing:border-box; 
-}
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+  }
 
-html { 
-  scroll-behavior: smooth; 
-}
+  html { 
+    scroll-behavior: smooth; 
+  }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(#d63384);
-  color: var(#333);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-  /* Desktop & laptop (default style) */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffe6f0; /* soft pink background */
+    color: #333;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* Header/Navbar styling */
+  .navbar {
+    background: linear-gradient(90deg, #ff69b4, #ff85c1); 
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
   .header-title {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'DM Serif Display', serif;
-    font-size: 50px;
-    color: #6c8df0;
+    font-size: 42px;
+    color: #fff;
     font-weight: bold;
-    top: 20px;
+    top: 18px;
     text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   }
 
   .logo-container {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
   }
 
   .logo {
@@ -60,10 +71,28 @@ body {
   }
 
   .brand-name {
-  font-family: 'Dancing Script', cursive;
-    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
+    color: #fff;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    transition: color 0.3s;
+  }
+
+  .nav-links li a:hover {
+    color: #ffe6f0;
   }
 
   /* Mobile & tablet adjustments */
@@ -78,35 +107,37 @@ body {
     .logo-container {
       flex-direction: column;
       align-items: center;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .logo {
-      height: 60px;
+      height: 55px;
     }
 
     .brand-name {
-      font-size: 22px;
+      font-size: 20px;
     }
 
-    /* Fix Check Out title on mobile so it doesn't overlap with logo */
     .header-title {
-      position: static; /* remove absolute */
+      position: static;
       transform: none;
-      margin-top: 10px;
+      margin-top: 8px;
       font-size: 32px;
+      color: #fff;
     }
 
     .nav-links {
       flex-direction: column;
       padding: 0;
+      margin-top: 10px;
     }
 
     .nav-links li {
-      margin: 5px 0;
+      margin: 6px 0;
     }
   }
 </style>
+  
 <body class="checkout-page">
 <!-- Navbar -->
  <header class="navbar">
@@ -262,6 +293,7 @@ body {
   </script>
 </body>
 </html>
+
 
 
 
