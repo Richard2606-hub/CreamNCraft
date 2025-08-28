@@ -28,7 +28,7 @@
         }
 
         body {
-            font-family:'DM Serif Diaplay';
+            font-family:'DM Serif Display';
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -83,7 +83,6 @@
           align-items: center; 
           gap: 5px; 
         }
-
 
         .brand-name{
           font-family:'Dancing Script',cursive;
@@ -217,7 +216,7 @@
             .icons-row { flex-wrap:wrap; }
         }
 
-        /*Milestone section*/
+        /* Milestone section */
         .Milestone-section{
             padding: 50px 0 100px;
             background: var(--light-pink-color);
@@ -229,7 +228,6 @@
             text-align:center;
             flex-direction:column;
             align-items: center;
-
         }
 
         .Milestone-section .Milestone .milestone-image{
@@ -237,14 +235,26 @@
             height: 180px;
             object-fit:cover;
             margin-bottom: 50px;
-            border-radius: var(--border-radius-circle);
+            border-radius: 50%;
         }
 
         .Milestone-section .Milestone .title{
             margin-bottom:16px;
-            font-size: var(--font-size-m);
+            font-size: 1.2rem;
         }
 
+        /* Fix Swiper visibility */
+        .swiper {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
         /* Footer */
         footer {
@@ -256,58 +266,58 @@
         }
 
         @media (max-width: 1024px) {
-  header nav h1 {
-    font-size: 36px;   /* smaller heading */
-  }
+          header nav h1 {
+            font-size: 36px;
+          }
 
-  header nav ul li a {
-    font-size: 18px;   /* reduce menu text */
-  }
+          header nav ul li a {
+            font-size: 18px;
+          }
 
-  .hero h2 {
-    font-size: 40px;   /* adjust hero text */
-  }
-}
+          .hero h2 {
+            font-size: 40px;
+          }
+        }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;   /* stack logo, title, and menu */
-    align-items: center;
-    text-align: center;
-    padding: 15px 20px;
-  }
+        @media (max-width: 768px) {
+          header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 15px 20px;
+          }
 
-  header nav h1 {
-    position: static;         /* remove absolute centering */
-    transform: none;
-    margin: 10px 0;
-    font-size: 28px;          /* smaller size */
-  }
+          header nav h1 {
+            position: static;
+            transform: none;
+            margin: 10px 0;
+            font-size: 28px;
+          }
 
-  header nav ul {
-    flex-direction: column;   /* vertical menu */
-    margin: 10px 0 0 0;
-    gap: 10px;
-  }
+          header nav ul {
+            flex-direction: column;
+            margin: 10px 0 0 0;
+            gap: 10px;
+          }
 
-  header nav ul li {
-    margin: 0;
-  }
+          header nav ul li {
+            margin: 0;
+          }
 
-  header nav ul li a {
-    font-size: 18px;
-  }
+          header nav ul li a {
+            font-size: 18px;
+          }
 
-  .hero h2 {
-    font-size: 28px;
-    padding: 15px;
-  }
+          .hero h2 {
+            font-size: 28px;
+            padding: 15px;
+          }
 
-  .about-container {
-    margin: 10px;
-    padding: 12px;
-  }
-}
+          .about-container {
+            margin: 10px;
+            padding: 12px;
+          }
+        }
     </style>
 </head>
 <body>
@@ -385,55 +395,45 @@
   <!--Milestone section-->
   <section class="Milestone-section">
     <h2 class="section-title">Milestone</h2>
-    <div class="section-content">
-        <div class="slider-container swiper">
-            <ul class="Milestone-list swiper-wrapper">
-                <li class="Milestone swiper-slide">
-                    <img src="Milestone1.jpg" alt="" class="milestone-image">
-                    <h3 class="title">1992- Birth of Cream & Craft</h3>
-                    <i class="description">Cream&Craft was founded as a humble family-run stall on a small street corner. Using grandmother’s original recipes and a hand-churned ice cream maker, 
-                        the founders served freshly made ice cream to neighbours and passers-by, focusing on quality, warmth, and personal connection.</i>
-                </li>
-                <li class="Milestone swiper-slide">
-                    <img src="Milestone2.png" alt="" class="milestone-image">
-                    <h3 class="title">1995-2000- First Growth</h3>
-                    <i class="description">As word spread and loyal customers returned, Cream&Craft introduced its first set of signature flavours—Classic Vanilla, Strawberry Bliss, and Rich Chocolate. 
-                        The growing popularity allowed the business to move into its first brick-and-mortar creamery, creating a cosy space where families could enjoy a scoop together.</i>
-                </li>
-                <li class="Milestone swiper-slide">
-                    <img src="Milestone3.jpg" alt="" class="milestone-image">
-                    <h3 class="title">2008- Innovation Era</h3>
-                    <i class="description">Driven by passion and creativity, Cream&Craft began experimenting with unique flavour combinations and seasonal creations. This led to the launch of limited-edition 
-                        recipes such as Honey Lavender, Burnt Caramel and Matcha Almond, which quickly became fan favourites and set the brand apart.</i>
-                </li>
-                <li class="Milestone swiper-slide">
-                    <img src="Milestone4.png" alt="" class="milestone-image">
-                    <h3 class="title">2012- Local Partnerships</h3>
-                    <i class="description">Committed to using only the freshest ingredients, Cream&Craft established formal partnerships with local dairy farmers and fruit growers. These collaborations ensured
-                         sustainable sourcing, better product quality and stronger support for the local community.</i>
-                </li>
-                <li class="Milestone swiper-slide">
-                    <img src="Milestone5.jpg" alt="" class="milestone-image">
-                    <h3 class="title">2017 – Expansion</h3>
-                    <i class="description">With its reputation growing across the region, the brand opened multiple new stores in nearby towns. Each outlet retained the same handcrafted preparation methods 
-                        and welcoming atmosphere, allowing more customers to experience Cream&Craft’s unique approach to ice cream.</i>
-                </li>
-                <li class="Milestone swiper-slide">
-                    <img src="Milestone6.jpg" alt="" class="milestone-image">
-                    <h3 class="title">2024 – Digital Transformation</h3>
-                    <i class="description">To serve a broader audience, Cream&Craft launched its own e-commerce platform and started nationwide delivery. Customers could now order their favourite flavours 
-                        online and enjoy handcrafted ice cream delivered directly to their homes, while still experiencing the same artisanal quality.</i>
-                </li>
-            </ul>
-
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="Milestone swiper-slide">
+                <img src="Milestone1.jpg" alt="" class="milestone-image">
+                <h3 class="title">1992- Birth of Cream & Craft</h3>
+                <i class="description">CCream&Craft was founded as a humble family-run stall on a small street corner. Using grandmother’s original recipes and a hand-churned ice cream maker, the founders served freshly made ice cream to neighbours and passers-by, focusing on quality, warmth, and personal connection.</i>
+            </div>
+            <div class="Milestone swiper-slide">
+                <img src="Milestone2.png" alt="" class="milestone-image">
+                <h3 class="title">1995-2000- First Growth</h3>
+                <i class="description">As word spread and loyal customers returned, Cream&Craft introduced its first set of signature flavours—Classic Vanilla, Strawberry Bliss, and Rich Chocolate. The growing popularity allowed the business to move into its first brick-and-mortar creamery, creating a cosy space where families could enjoy a scoop together.</i>
+            </div>
+            <div class="Milestone swiper-slide">
+                <img src="Milestone3.jpg" alt="" class="milestone-image">
+                <h3 class="title">2008- Innovation Era</h3>
+                <i class="description">Driven by passion and creativity, Cream&Craft began experimenting with unique flavour combinations and seasonal creations. This led to the launch of limited-edition recipes such as Honey Lavender, Burnt Caramel and Matcha Almond, which quickly became fan favourites and set the brand apart.</i>
+            </div>
+            <div class="Milestone swiper-slide">
+                <img src="Milestone4.png" alt="" class="milestone-image">
+                <h3 class="title">2012- Local Partnerships</h3>
+                <i class="description">Committed to using only the freshest ingredients, Cream&Craft established formal partnerships with local dairy farmers and fruit growers. These collaborations ensured sustainable sourcing, better product quality and stronger support for the local community.</i>
+            </div>
+            <div class="Milestone swiper-slide">
+                <img src="Milestone5.jpg" alt="" class="milestone-image">
+                <h3 class="title">2017 – Expansion</h3>
+                <i class="description">With its reputation growing across the region, the brand opened multiple new stores in nearby towns. Each outlet retained the same handcrafted preparation methods and welcoming atmosphere, allowing more customers to experience Cream&Craft’s unique approach to ice cream.</i>
+            </div>
+            <div class="Milestone swiper-slide">
+                <img src="Milestone6.jpg" alt="" class="milestone-image">
+                <h3 class="title">2024 – Digital Transformation</h3>
+                <i class="description">To serve a broader audience, Cream&Craft launched its own e-commerce platform and started nationwide delivery. Customers could now order their favourite flavours online and enjoy handcrafted ice cream delivered directly to their homes, while still experiencing the same artisanal quality..</i>
+            </div>
         </div>
+
+        <!-- Swiper controls -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-
-
   </section>
 </main>
 
@@ -453,13 +453,12 @@
     },
   });
 
-     const homeLink = document.querySelector("nav ul li:first-child a");
+  const homeLink = document.querySelector("nav ul li:first-child a");
   if (localStorage.getItem("signedIn") === "true") {
       homeLink.href = "main.html"; // after login homepage
   } else {
       homeLink.href = "index.html"; // before login homepage
   }
-  </
 </script>
 
 <footer>
@@ -468,6 +467,3 @@
 
 </body>
 </html>
-
-
-
