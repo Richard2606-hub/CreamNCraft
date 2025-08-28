@@ -158,6 +158,7 @@ header nav ul li a {
 
 /* Footer Styles */
 footer {
+    position: absolute;
     background-color:#f8d2ed;
     padding: 10px 0;
     text-align: center;
@@ -165,3 +166,4 @@ footer {
     font-family:'DM Serif Diaplay';
 
 }
+
