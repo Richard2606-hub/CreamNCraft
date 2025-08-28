@@ -21,7 +21,7 @@
   .checkout-page .navbar {
     font-family: 'DM Serif Display', serif;
     background: #f8d2ed;
-    padding: 10px 20px;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,19 +52,16 @@ header {
 }                    
                        
 
-  .checkout-page .brand-name {
-    font-family: 'Dancing Script', cursive;
-    font-size: 28px;
-    font-weight: bold;
-    color: purple;
-    margin-left: 0px;
-    margin-top: 8px;
-    top: 135px;
-    text-align: center;
-    display:flex;
-    align-items:flex-start;      /* Vertically center */
-    position:absolute;  /* Position it at the center */
-  }
+.checkout-page .brand-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 28px;
+  font-weight: bold;
+  color: purple;
+  margin: 0;              /* reset weird margins */
+  display: inline-block;  /* sits nicely next to logo */
+  position: relative;     /* no absolute positioning */
+}
+
 
 
   .checkout-page .header-title {
@@ -379,6 +376,7 @@ header {
   </script>
 </body>
 </html>
+
 
 
 
