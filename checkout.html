@@ -329,9 +329,10 @@
           total: totalPrice
         };
 
-        let orders = JSON.parse(localStorage.getItem("orders")) || [];
-        orders.push(order);
-        localStorage.setItem("orders", JSON.stringify(orders));
+        let historyKey = "purchaseHistory_" + usernameField;
+let history = JSON.parse(localStorage.getItem(historyKey)) || [];
+history.push(order);
+localStorage.setItem(historyKey, JSON.stringify(history));
 
         alert("Order placed successfully!");
         localStorage.removeItem("cart");
@@ -341,6 +342,7 @@
   </script>
 </body>
 </html>
+
 
 
 
