@@ -52,64 +52,50 @@
                 </div>
             </form>
 
+
             <script>
- document.getElementById("myBtnEventListener").addEventListener("click",submit);
+                document.getElementById("myBtnEventListener").addEventListener("click",submit);
 
-    function submit(){
-        event.preventDefault();
+                function submit(){
+                    event.preventDefault();
 
-        const name = document.querySelector('#name').value;
-        const email = document.querySelector('#email').value;
-        const message = document.querySelector('#message').value;
+                    const name = document.querySelector('#name').value;
+                    const email = document.querySelector('#email').value;
+                    const message = document.querySelector('#message').value;
 
-        if (!name || !email || !message) {
-            event.preventDefault(); // Prevent form submission
-            alert('Please fill out all fields.');
-        }
-        alert("Thank you! Your message has been submitted.");
-        document.getElementById("form").reset();
+                    if (!name || !email || !message) {
+                        event.preventDefault(); // Prevent form submission
+                        alert('Please fill out all fields.');
+                    }
+                    alert("Thank you! Your message has been submitted.");
+                    document.getElementById("form").reset();
 
-        document.getElementById("myBtnEventListener").removeEventListener("click",submit);
+                    document.getElementById("myBtnEventListener").removeEventListener("click",submit);
 
-    }
+                }
 
-    // Handle return to main menu
-    function returnToMenu() {
-        window.location.href = "main.html"; // replace with your main menu page
-    }
+                // Handle return to main menu
+                function returnToMenu() {
+                    window.location.href = "main.html"; // replace with your main menu page
+                }
 
-     const homeLink = document.querySelector("nav ul li:first-child a");
-  if (localStorage.getItem("signedIn") === "true") {
-      homeLink.href = "main.html"; // after login homepage
-  } else {
-      homeLink.href = "index.html"; // before login homepage
-  }
-  </
 
-</script>
+        </script>
 
         </section>
     </main>
 
-    
-   
     <!-- Footer Section -->
-<footer>
-    <div class="footer-content">
-        <h2>Our Contact Information</h2>
-        <p>creamncraft@mly.com</p>
-        <p>Contact No: 6019-69983288</p>
-        <p>Address: 215 Jalan Pantai, George Town, Penang, Malaysia</p>
-    </div>
-</footer>
+    <footer>
+        <div class="footer-content">
+            <h2>Our Contact Information</h2>
+            <p>creamncraft@mly.com</p>
+            <p>Contact No: 6019-69983288</p>
+            <p>Address: 215 Jalan Pantai, George Town, Penang, Malaysia</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
 
 
