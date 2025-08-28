@@ -105,100 +105,138 @@ header {
 
   .checkout-page .btn-pink:hover { background-color: #fb4566; }
 
-  /* Desktop/Laptop – keep as-is, just center the card a bit */
-  @media (min-width: 1025px) {
-    .checkout-page .card {
-      max-width: 720px;
-      margin: 0 auto;
-    }
+/* Default (PC/Laptop) keeps your design */
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'DM Serif Display', serif;
+  font-size: 50px;
+  color: #6c8df0;
+  font-weight: bold;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  /* Tablet (769–1024px) */
-  @media (max-width: 1024px) and (min-width: 769px) {
-    .checkout-page .header-title { font-size: 40px; }
-    .checkout-page .logo { width: 65px; }
-    .checkout-page .brand-name { font-size: 22px; }
-    .checkout-page .nav-links li a { font-size: 16px; }
-    .checkout-page .card { padding: 20px; }
+  .header-title {
+    position: static;   /* remove absolute */
+    transform: none;
+    margin: 10px 0;
+    font-size: 32px;
   }
 
-  /* Mobile (<= 768px) */
-  @media (max-width: 768px) {
-    .checkout-page .navbar {
-      flex-direction: column;
-      align-items: stretch;
-      padding: 15px;
-    }
-
-    .checkout-page .header-title {
-      position: static;
-      transform: none;
-      margin: 6px 0 2px;
-      font-size: 28px;
-    }
-
-    .checkout-page .logo { width: 55px; }
-    .checkout-page .brand-name { font-size: 20px; }
-
-    .checkout-page .nav-links {
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .checkout-page .nav-links li a { font-size: 16px; }
-
-    .checkout-page .card {
-      padding: 16px;
-      box-shadow: none;
-      border-radius: 12px;
-    }
-
-    /* Order table: allow horizontal scroll on tiny screens */
-    .checkout-page table.table {
-      display: block;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
-    }
-
-    .checkout-page table.table th,
-    .checkout-page table.table td {
-      font-size: 14px;
-      padding: 6px;
-    }
-
-    .checkout-page label.form-label { font-size: 13px; }
-    .checkout-page .form-control {
-      font-size: 14px;
-      padding: 8px;
-    }
-
-    .checkout-page .btn.btn-pink {
-      font-size: 16px;
-      padding: 12px;
-      border-radius: 8px;
-    }
-
-    .checkout-page .footer {
-      font-size: 12px;
-      padding: 10px;
-      text-align: center;
-    }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding-left: 0;
   }
 
-  /* Extra-small phones (<= 480px) */
-  @media (max-width: 480px) {
-    .checkout-page .header-title { font-size: 22px; }
-    .checkout-page .logo { width: 45px; }
-    .checkout-page .brand-name { font-size: 18px; }
-    .checkout-page .nav-links li a { font-size: 14px; }
-    .checkout-page table.table th,
-    .checkout-page table.table td { font-size: 12px; }
-    .checkout-page .btn.btn-pink {
-      font-size: 14px;
-      padding: 10px;
-    }
+  .nav-links li a {
+    font-size: 16px;
   }
+
+  .logo {
+    width: 60px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 45px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+}
+/* Default (PC/Laptop) keeps your design */
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'DM Serif Display', serif;
+  font-size: 50px;
+  color: #6c8df0;
+  font-weight: bold;
+}
+
+/* Tablet & Mobile */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-title {
+    position: static;   /* remove absolute */
+    transform: none;
+    margin: 10px 0;
+    font-size: 32px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    padding-left: 0;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 45px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+}
+
+
 </style>
 
 </head>
@@ -214,7 +252,7 @@ header {
     <nav id="primary-navigation" class="nav">
       <ul class="nav-links">
         <li><a href="main.html"><b>Home</b></a></li>
-        <li><a href="aboutus.html"><b>About Us</b></a></li>
+        <li><a href="AboutUs.html"><b>About Us</b></a></li>
         <li><a href="contact_us.html"><b>Contact Us</b></a></li>
         <li><a href="shoppingcart.html"><b>Cart</b></a></li>
       </ul>
@@ -341,6 +379,7 @@ header {
   </script>
 </body>
 </html>
+
 
 
 
