@@ -40,11 +40,13 @@ header {
     flex-wrap: wrap; 
 }
 
-  .checkout-page .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+.checkout-page .logo-container {
+  display: flex;
+  flex-direction: column;   /* stack top-down */
+  align-items: center;      /* center both horizontally */
+  gap: 5px;                 /* small space between logo & name */
+}
+
 
   .checkout-page .logo { 
     width: 150px;
@@ -57,10 +59,9 @@ header {
   font-size: 28px;
   font-weight: bold;
   color: purple;
-  margin: 0;              /* reset weird margins */
-  display: inline-block;  /* sits nicely next to logo */
-  position: relative;     /* no absolute positioning */
+  margin: 0;
 }
+
 
 
 
@@ -376,6 +377,7 @@ header {
   </script>
 </body>
 </html>
+
 
 
 
