@@ -164,9 +164,11 @@ footer .footer-content {
     header nav h1 {
         font-size: 50px;
         margin-top: -10px;
+        font-family:'DM Serif Diaplay';
     }
     header nav ul li a {
         font-size: 20px;
+        font-family:'DM Serif Diaplay';
     }
     .brand-name {
         font-size: 24px;
@@ -206,6 +208,7 @@ footer .footer-content {
 
     .contact-section h3 {
         font-size: 20px;
+        font-family:'DM Serif Diaplay';
     }
 
     .contact-form input,
@@ -258,6 +261,7 @@ footer .footer-content {
 .btn-group button {
     flex: 1; /* buttons resize evenly */
     min-width: 120px; /* prevents buttons from shrinking too small */
+    font-family:'DM Serif Diaplay';
 }
 
 /* On very small screens, add extra vertical spacing */
@@ -271,6 +275,7 @@ footer .footer-content {
         width: 100%; /* full width for easy tapping */
     }
 }
+
 
 
 
