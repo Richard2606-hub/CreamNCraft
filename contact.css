@@ -14,7 +14,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #f8d2ed;
+    background-color:  #f8d2ed;
     padding: 10px 0px;
     display: flex;
     align-items: center;
@@ -277,6 +277,7 @@ footer .footer-content {
         width: 100%; /* full width for easy tapping */
     }
 }
+
 
 
 
