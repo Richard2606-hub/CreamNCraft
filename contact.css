@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family:'DM Serif Diaplay';
     background-color: #f8d2ed;
     color: #333;
 }
@@ -277,6 +277,7 @@ footer .footer-content {
         width: 100%; /* full width for easy tapping */
     }
 }
+
 
 
 
