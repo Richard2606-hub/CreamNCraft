@@ -30,7 +30,7 @@ header .logo img {
     gap: 5px;
 }
 
-header nav h1 {
+header h1 {
   font-family:'DM Serif Display';
   font-size: 70px;
   text-align: center;
@@ -340,6 +340,7 @@ footer .footer-content {
     font-size: 20px;
   }
 }
+
 
 
 
