@@ -20,7 +20,12 @@
             <img src="logo.png" alt="Cream & Craft Logo">
             <span class="brand-name">Cream&Craft</span>
         </div>
-        <nav>
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <nav id="nav-menu">
             <h1>Our Delicious Ice-Creams</h1>
             <ul>
                 <li><a href="main.html">Home</a></li>
@@ -152,6 +157,20 @@
         });
 
         searchInput.addEventListener('input', filterProducts);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+
+      // Accessibility
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+  });
     </script>
 
     <footer>
@@ -160,4 +179,5 @@
 
 </body>
 </html>
+
 
