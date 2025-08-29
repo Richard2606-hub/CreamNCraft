@@ -39,6 +39,8 @@ header nav h1 {
   display:flex;
   align-items:flex-start;
   margin-top: -30px;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+ margin: 40px 0;
   position:absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -338,6 +340,7 @@ footer .footer-content {
     font-size: 20px;
   }
 }
+
 
 
 
