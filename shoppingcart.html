@@ -223,6 +223,69 @@ footer {
         padding: 3px 6px;
     }
 }
+    /* Hamburger button styling */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+    margin-right: 20px;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #d63384;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Transform to "X" */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Responsive nav toggle */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #f9c8e6;
+        position: absolute;
+        top: 80px;
+        right: 15px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 998;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -232,9 +295,14 @@ footer {
         <img src="logo.png" alt="Logo">
         <span class="brand-name">Cream&Craft</span>
     </div>
-
-    <nav>
-        <h1>Shopping Cart</h1>
+    <h1>Shopping Cart</h1>
+    <nav id="nav-menu">
+        <!-- Hamburger button -->
+        <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <ul>
             <li><a href="main.html">Home</a></li>
             <li><a href="Ice-cream.html">Menu</a></li>
@@ -355,7 +423,22 @@ renderCart();
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navList = document.querySelector('header nav ul');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navList.classList.toggle('active');
+
+    // Accessibility
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+});
+</script>
+
 
 </body>
 </html>
+
 
