@@ -223,6 +223,62 @@ footer {
         padding: 3px 6px;
     }
 }
+
+/* Hamburger styles */
+.hamburger {
+  display: none; /* hidden by default */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 20px;
+  z-index: 1001; /* above other elements */
+}
+
+/* Show hamburger on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav by default */
+  nav {
+    display: none;
+    width: 100%;
+    background-color: #f9c8e6;
+    position: absolute;
+    top: 70px; /* below header */
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0 0 10px 10px;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 10px;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+}
 </style>
 </head>
 <body>
@@ -369,6 +425,7 @@ renderCart();
     
 </body>
 </html>
+
 
 
 
