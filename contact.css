@@ -63,7 +63,7 @@ header nav ul li {
 
 header nav ul li a {
     color: #333;
-    font-family:'DM Serif Diaplay';
+    font-family: 'DM Serif Display', serif;
     text-decoration: none;
     font-weight: bold;
     margin-right: 0%;
@@ -277,6 +277,7 @@ footer .footer-content {
         width: 100%; /* full width for easy tapping */
     }
 }
+
 
 
 
