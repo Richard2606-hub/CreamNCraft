@@ -277,6 +277,58 @@ footer .footer-content {
         width: 100%; /* full width for easy tapping */
     }
 }
+/* Hide hamburger by default (desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* Show hamburger on smaller screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav by default on mobile */
+  nav {
+    display: none;
+    width: 100%;
+  }
+
+  /* Show nav when active */
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    background-color: #f8d2ed;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+}
 
 
 
