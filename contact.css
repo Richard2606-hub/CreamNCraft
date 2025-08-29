@@ -192,6 +192,8 @@ footer .footer-content {
         transform: none;
         font-size: 40px;
         margin: 10px 0;
+        font-family:'DM Serif Diaplay';
+
     }
 
     header nav ul {
@@ -201,6 +203,8 @@ footer .footer-content {
 
     header nav ul li {
         margin: 10px 0;
+        font-family:'DM Serif Diaplay';
+ 
     }
 
     .contact-section {
@@ -333,6 +337,7 @@ footer .footer-content {
     font-size: 20px;
   }
 }
+
 
 
 
