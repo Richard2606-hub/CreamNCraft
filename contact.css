@@ -164,7 +164,7 @@ footer .footer-content {
 
 /* ---------------- RESPONSIVE DESIGN ---------------- */
 @media (max-width: 1024px) {
-    header nav h1 {
+    header h1 {
         font-size: 50px;
         margin-top: -10px;
         font-family:'DM Serif Diaplay';
@@ -189,7 +189,7 @@ footer .footer-content {
         margin: 0 auto;
     }
 
-    header nav h1 {
+    header h1 {
         position: static;
         transform: none;
         font-size: 40px;
@@ -238,7 +238,7 @@ footer .footer-content {
         font-size: 20px;
     }
 
-    header nav h1 {
+    header h1 {
         font-size: 32px;
         font-family:'DM Serif Diaplay';
         color:#6c8df0;
@@ -340,6 +340,7 @@ footer .footer-content {
     font-size: 20px;
   }
 }
+
 
 
 
