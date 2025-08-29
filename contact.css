@@ -84,7 +84,7 @@ header nav ul li a {
 }
 
 .contact-section h3 {
-    font-family:'DM Serif Diaplay';
+    font-family:'DM Serif Display';
     font-size: 25px;
     color: #333;
     margin-bottom: 20px;
@@ -104,7 +104,7 @@ header nav ul li a {
 }
 
 .contact-form label {
-    font-family:'DM Serif Diaplay';
+    font-family:'DM Serif Display';
     margin-bottom: 8px;
     font-size: 20px;
     color: #333;
@@ -118,7 +118,7 @@ header nav ul li a {
     margin-bottom: 15px;
     border: 2px solid #ebb9b9;
     border-radius: 5px;
-    font-family:'DM Serif Diaplay';
+    font-family:'DM Serif Display';
 }
 
 .contact-form input:focus,
@@ -148,7 +148,7 @@ footer {
     padding: 30px 0;
     text-align: center;
     font-size: 16px;
-    font-family:'DM Serif Diaplay';
+    font-family:'DM Serif Display';
     width: 100%;
     position: relative;
     bottom: 0;
@@ -167,11 +167,11 @@ footer .footer-content {
     header h1 {
         font-size: 50px;
         margin-top: -10px;
-        font-family:'DM Serif Diaplay';
+        font-family:'DM Serif Display';
     }
     header nav ul li a {
         font-size: 20px;
-        font-family:'DM Serif Diaplay';
+        font-family:'DM Serif Display';
     }
     .brand-name {
         font-size: 24px;
@@ -205,7 +205,7 @@ footer .footer-content {
 
     header nav ul li {
         margin: 10px 0;
-        font-family:'DM Serif Diaplay';
+        font-family:'DM Serif Display';
  
     }
 
@@ -215,7 +215,7 @@ footer .footer-content {
 
     .contact-section h3 {
         font-size: 20px;
-        font-family:'DM Serif Diaplay';
+        font-family:'DM Serif Display';
     }
 
     .contact-form input,
@@ -225,7 +225,7 @@ footer .footer-content {
 
     footer {
         font-size: 12px;
-        font-family:'DM Serif Diaplay';
+        font-family:'DM Serif Display';
     }
 }
 
@@ -240,13 +240,13 @@ footer .footer-content {
 
     header h1 {
         font-size: 32px;
-        font-family:'DM Serif Diaplay';
+        font-family:'DM Serif Display';
         color:#6c8df0;
     }
 
     header nav ul li a {
         font-size: 18px;
-        font-family:'DM Serif Diaplay';
+        font-family:'DM Serif Display';
  
     }
 
@@ -273,7 +273,7 @@ footer .footer-content {
 .btn-group button {
     flex: 1; /* buttons resize evenly */
     min-width: 120px; /* prevents buttons from shrinking too small */
-    font-family:'DM Serif Diaplay';
+    font-family:'DM Serif Display';
 }
 
 /* On very small screens, add extra vertical spacing */
@@ -340,6 +340,7 @@ footer .footer-content {
     font-size: 20px;
   }
 }
+
 
 
 
