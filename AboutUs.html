@@ -318,6 +318,32 @@
             padding: 12px;
           }
         }
+
+           .hamburger {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+          }
+        
+          @media (max-width: 768px) {
+            .hamburger {
+              display: block;
+              margin-top: 10px;
+            }
+        
+            header nav ul {
+              display: none;
+              flex-direction: column;
+              margin: 10px 0 0 0;
+              gap: 10px;
+            }
+        
+            header nav ul.show {
+              display: flex;
+            }
+          }
     </style>
 </head>
 <body>
@@ -467,3 +493,4 @@
 
 </body>
 </html>
+
