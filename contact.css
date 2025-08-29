@@ -234,10 +234,14 @@ footer .footer-content {
 
     header nav h1 {
         font-size: 32px;
+        font-family:'DM Serif Diaplay';
+        color:#6c8df0;
     }
 
     header nav ul li a {
         font-size: 18px;
+        font-family:'DM Serif Diaplay';
+ 
     }
 
     .contact-section h3 {
@@ -329,6 +333,7 @@ footer .footer-content {
     font-size: 20px;
   }
 }
+
 
 
 
